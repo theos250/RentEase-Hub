@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: theos250/RentEase-Hub
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/RentEase-Hub/images/uploads"
+
+collections:
+  - name: "listings"
+    label: "Listings"
+    folder: "listings"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
