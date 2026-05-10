@@ -1,1632 +1,1260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RentEase — Find Your Home in Rwanda</title>
-<meta name="description" content="Rwanda's premier digital rental marketplace. Verified listings, secure payments, digital agreements. Find your next home in Kigali today.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ════════════════════════════════════════
-   TOKENS & RESET
-════════════════════════════════════════ */
-:root {
-  --forest: #0e2a1c;
-  --forest-mid: #163d28;
-  --forest-light: #1f5236;
-  --sage: #3d7a57;
-  --sage-light: #5a9e77;
-  --terra: #c4622d;
-  --terra-light: #e07d4a;
-  --gold: #c8961a;
-  --gold-light: #e6b43c;
-  --cream: #f7f3ec;
-  --cream-warm: #f0e9dc;
-  --sand: #e8ddd0;
-  --ink: #0a1a10;
-  --ink-mid: #233328;
-  --muted: #6b7d72;
-  --white: #ffffff;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Outfit', sans-serif;
+  <!-- SEO Meta Tags -->
+  <title>RentEase — Find Your Home in Rwanda | Kigali Apartments & Houses for Rent</title>
+  <meta name="description" content="Rent apartments, houses, and rooms in Kigali, Rwanda. Verified listings, Titre Foncier checked, MTN MoMo payments, digital agreements. Rwanda's most trusted rental marketplace." />
+  <meta name="keywords" content="apartments for rent Kigali, houses for rent Rwanda, Kigali rental, Gasabo rent, Kimihurura apartment, Rwanda housing, MTN MoMo rent payment" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rent-ease-hub.vercel.app/" />
 
-  --nav-h: 72px;
-  --r: 6px;
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rent-ease-hub.vercel.app/" />
+  <meta property="og:title" content="RentEase — Kigali's Verified Rental Marketplace" />
+  <meta property="og:description" content="Find verified apartments, houses, and rooms for rent across Kigali. Secure escrow payments via MTN MoMo. Digital agreements. No hidden broker fees." />
+  <meta property="og:image" content="https://rent-ease-hub.vercel.app/og-image.jpg" />
+  <meta property="og:locale" content="en_RW" />
+  <meta property="og:site_name" content="RentEase Rwanda" />
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RentEase — Find Your Home in Rwanda" />
+  <meta name="twitter:description" content="Verified rental listings across Kigali. MTN MoMo payments. Titre Foncier verified. Digital agreements." />
+  <meta name="twitter:image" content="https://rent-ease-hub.vercel.app/og-image.jpg" />
 
-body {
-  font-family: var(--font-body);
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "RentEase Rwanda",
+        "url": "https://rent-ease-hub.vercel.app/",
+        "logo": "https://rent-ease-hub.vercel.app/logo.png",
+        "contactPoint": { "@type": "ContactPoint", "email": "hello@rentease.rw", "contactType": "customer support" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Kigali", "addressCountry": "RW" },
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "name": "RentEase",
+        "url": "https://rent-ease-hub.vercel.app/",
+        "potentialAction": { "@type": "SearchAction", "target": "https://rent-ease-hub.vercel.app/#listings?q={search_term_string}", "query-input": "required name=search_term_string" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How does RentEase verify listings?", "acceptedAnswer": { "@type": "Answer", "text": "Every listing is cross-checked against the Rwanda Land Management Authority (RLMUA) Titre Foncier database. Landlords must upload ownership documents before going live." } },
+          { "@type": "Question", "name": "What is RentEase commission?", "acceptedAnswer": { "@type": "Answer", "text": "RentEase charges a transparent 10% of the first month's rent, only on success. Traditional brokers charge 1–3 months." } },
+          { "@type": "Question", "name": "Can I pay rent via MTN MoMo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RentEase supports MTN Mobile Money, Airtel Money, and card payments. Funds are held in escrow until you confirm you have moved in." } }
+        ]
+      }
+    ]
+  }
+  </script>
 
-img { display: block; max-width: 100%; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-/* ════════════════════════════════════════
-   SCROLLBAR
-════════════════════════════════════════ */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 3px; }
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ════════════════════════════════════════
-   NAV
-════════════════════════════════════════ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--nav-h);
-  z-index: 900;
-  transition: background 0.4s var(--ease), box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(14, 42, 28, 0.97);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-}
-.nav-inner {
-  max-width: 1280px; margin: 0 auto;
-  height: 100%;
-  padding: 0 40px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.75rem; font-weight: 700;
-  color: var(--white);
-  letter-spacing: -0.01em;
-  position: relative;
-}
-.nav-logo::after {
-  content: '.rw';
-  font-size: 0.85rem; font-weight: 300;
-  color: var(--gold-light);
-  vertical-align: super; margin-left: 2px;
-}
-.nav-links {
-  display: flex; align-items: center; gap: 4px;
-}
-.nav-links a {
-  font-size: 0.82rem; font-weight: 500;
-  letter-spacing: 0.04em;
-  color: rgba(255,255,255,0.7);
-  padding: 8px 14px;
-  border-radius: 4px;
-  transition: color 0.2s, background 0.2s;
-}
-.nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-.nav-actions { display: flex; align-items: center; gap: 12px; }
-.btn-nav-outline {
-  font-size: 0.82rem; font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 9px 20px;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-.btn-nav-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
-.btn-nav-fill {
-  font-size: 0.82rem; font-weight: 600;
-  background: var(--terra);
-  color: var(--white);
-  padding: 10px 22px;
-  border-radius: 4px;
-  transition: background 0.2s, transform 0.15s;
-}
-.btn-nav-fill:hover { background: var(--terra-light); transform: translateY(-1px); }
-.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
-.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--white); transition: 0.3s; }
-.mobile-menu {
-  display: none;
-  position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-  background: var(--forest);
-  z-index: 800;
-  padding: 40px;
-  flex-direction: column; gap: 8px;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a { font-size: 1.4rem; color: rgba(255,255,255,0.8); padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-family: var(--font-display); font-weight: 300; }
-.mobile-menu a:last-child { border: none; margin-top: 20px; background: var(--terra); color: var(--white); text-align: center; border-radius: 4px; padding: 16px; font-size: 1rem; font-family: var(--font-body); font-weight: 600; }
+    :root {
+      --green: #16a34a;
+      --green-light: #dcfce7;
+      --green-dark: #14532d;
+      --green-mid: #22c55e;
+      --gold: #ca8a04;
+      --gold-light: #fef9c3;
+      --surface: #f8f7f4;
+      --surface2: #f0ede8;
+      --border: #e2ddd6;
+      --text: #1a1a18;
+      --text-muted: #6b6860;
+      --text-light: #9c9890;
+      --white: #ffffff;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,.12), 0 16px 40px rgba(0,0,0,.08);
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
 
-/* ════════════════════════════════════════
-   HERO
-════════════════════════════════════════ */
-#hero {
-  min-height: 100vh;
-  background: var(--forest);
-  position: relative;
-  overflow: hidden;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: var(--nav-h) 0 0;
-}
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
 
-/* Animated background pattern */
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(31,82,54,0.5) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(196,98,45,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 90% 10%, rgba(200,150,26,0.08) 0%, transparent 50%);
-}
-.hero-grid {
-  position: absolute; inset: 0; z-index: 0; opacity: 0.04;
-  background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-.hero-orb {
-  position: absolute; border-radius: 50%;
-  filter: blur(80px); pointer-events: none; z-index: 0;
-}
-.hero-orb-1 { width: 500px; height: 500px; background: rgba(61,122,87,0.25); top: -100px; right: -100px; animation: float1 8s ease-in-out infinite; }
-.hero-orb-2 { width: 300px; height: 300px; background: rgba(196,98,45,0.15); bottom: 0; left: 20%; animation: float2 10s ease-in-out infinite; }
-@keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,30px)} }
-@keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(20px,-20px)} }
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1rem, 4vw, 2.5rem);
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 1.4rem; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 0; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text-muted); text-decoration: none; padding: .5rem 1rem; border-radius: 8px; transition: color .2s, background .2s; }
+    .nav-links a:hover { color: var(--text); background: var(--surface); }
+    .nav-actions { display: flex; gap: .75rem; align-items: center; }
+    .btn-ghost { background: none; border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: .875rem; font-weight: 500; padding: .5rem 1.1rem; border-radius: 8px; cursor: pointer; transition: all .2s; text-decoration: none; display: inline-flex; align-items: center; gap: .4rem; }
+    .btn-ghost:hover { border-color: var(--text); background: var(--surface); }
+    .btn-primary { background: var(--green); color: white; border: none; font-family: var(--font-body); font-size: .875rem; font-weight: 600; padding: .5rem 1.25rem; border-radius: 8px; cursor: pointer; transition: all .2s; text-decoration: none; display: inline-flex; align-items: center; gap: .4rem; }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(22,163,74,.3); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-large { padding: .8rem 1.75rem; font-size: 1rem; border-radius: 10px; }
+    .hamburger { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: .45rem .6rem; cursor: pointer; flex-direction: column; gap: 4px; }
+    .hamburger span { display: block; width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: all .3s; }
 
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto;
-  padding: 80px 40px 0;
-  display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: rgba(200,150,26,0.12);
-  border: 1px solid rgba(200,150,26,0.3);
-  color: var(--gold-light);
-  font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  padding: 8px 16px; border-radius: 100px;
-  margin-bottom: 28px;
-}
-.hero-eyebrow::before { content:''; width:6px; height:6px; background:var(--gold-light); border-radius:50%; animation: pulse 2s ease-in-out infinite; }
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
+    /* ── HERO ── */
+    .hero {
+      padding: clamp(4rem, 10vw, 7rem) clamp(1rem, 4vw, 2.5rem) 3rem;
+      max-width: 1200px; margin: 0 auto; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: var(--green-light); color: var(--green-dark); font-size: .8rem; font-weight: 600; padding: .35rem .9rem; border-radius: 99px; margin-bottom: 1.25rem; letter-spacing: .02em; }
+    .hero-badge::before { content: ''; width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.15; color: var(--text); margin-bottom: 1.25rem; }
+    .hero h1 em { font-style: italic; color: var(--green); }
+    .hero p { font-size: 1.05rem; color: var(--text-muted); max-width: 480px; margin-bottom: 2rem; line-height: 1.7; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .hero-trust { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: .4rem; font-size: .8rem; color: var(--text-muted); font-weight: 500; }
+    .trust-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
 
-.hero-h1 {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 5.5vw, 5.5rem);
-  font-weight: 300;
-  line-height: 1.05;
-  color: var(--white);
-  margin-bottom: 28px;
-  letter-spacing: -0.02em;
-}
-.hero-h1 em { font-style: italic; font-weight: 300; color: var(--gold-light); }
-.hero-h1 strong { font-weight: 600; display: block; }
+    /* ── SEARCH CARD ── */
+    .search-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 1.75rem; box-shadow: var(--shadow);
+    }
+    .search-tabs { display: flex; gap: 0; margin-bottom: 1.25rem; background: var(--surface); border-radius: 8px; padding: 3px; }
+    .search-tab { flex: 1; background: none; border: none; font-family: var(--font-body); font-size: .85rem; font-weight: 500; color: var(--text-muted); padding: .5rem; border-radius: 6px; cursor: pointer; transition: all .2s; }
+    .search-tab.active { background: white; color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+    .search-fields { display: grid; gap: .75rem; }
+    .field-label { font-size: .75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: .35rem; }
+    .field-select {
+      width: 100%; padding: .7rem 1rem; border: 1px solid var(--border); border-radius: 8px;
+      font-family: var(--font-body); font-size: .9rem; color: var(--text); background: var(--surface);
+      cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6860' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right .9rem center;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .field-select:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(22,163,74,.15); }
+    .search-btn { width: 100%; margin-top: .25rem; }
+    .search-count { text-align: center; margin-top: .75rem; font-size: .8rem; color: var(--text-muted); }
+    .search-count strong { color: var(--green); }
 
-.hero-sub {
-  font-size: 1.05rem; font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.75;
-  max-width: 500px;
-  margin-bottom: 44px;
-}
+    /* ── PARTNERS ── */
+    .partners { background: var(--surface); padding: 1.5rem clamp(1rem,4vw,2.5rem); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .partners-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+    .partners-label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-light); white-space: nowrap; }
+    .partner-logos { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+    .partner-pill { background: white; border: 1px solid var(--border); border-radius: 99px; padding: .4rem 1rem; font-size: .8rem; font-weight: 600; color: var(--text-muted); }
 
-.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
-.btn-terra {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--terra);
-  color: var(--white);
-  font-size: 0.92rem; font-weight: 600;
-  padding: 16px 32px;
-  border-radius: var(--r);
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 24px rgba(196,98,45,0.35);
-}
-.btn-terra:hover { background: var(--terra-light); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(196,98,45,0.4); }
-.btn-ghost {
-  display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid rgba(255,255,255,0.25);
-  color: rgba(255,255,255,0.85);
-  font-size: 0.92rem; font-weight: 500;
-  padding: 16px 32px;
-  border-radius: var(--r);
-  transition: all 0.2s;
-}
-.btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: var(--white); background: rgba(255,255,255,0.05); }
-.btn-arrow { font-size: 1rem; transition: transform 0.2s; }
-.btn-terra:hover .btn-arrow, .btn-ghost:hover .btn-arrow { transform: translateX(4px); }
+    /* ── HOW IT WORKS ── */
+    .section { padding: 5rem clamp(1rem,4vw,2.5rem); max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--green); margin-bottom: .75rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--green); }
+    .section-sub { font-size: 1rem; color: var(--text-muted); max-width: 560px; margin-bottom: 3rem; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .step-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; position: relative; }
+    .step-num { font-family: var(--font-display); font-size: 3rem; color: var(--border); line-height: 1; margin-bottom: .75rem; }
+    .step-icon { width: 44px; height: 44px; background: var(--green-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .step-icon svg { width: 22px; height: 22px; stroke: var(--green); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .step-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .5rem; }
+    .step-card p { font-size: .875rem; color: var(--text-muted); line-height: 1.6; }
 
-.hero-trust {
-  display: flex; align-items: center; gap: 24px;
-  flex-wrap: wrap;
-}
-.trust-badge {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.78rem; color: rgba(255,255,255,0.5);
-}
-.trust-badge svg { opacity: 0.7; }
-.trust-sep { width: 1px; height: 16px; background: rgba(255,255,255,0.15); }
+    /* ── LISTINGS ── */
+    .listings-section { background: var(--surface); padding: 5rem clamp(1rem,4vw,2.5rem); }
+    .listings-inner { max-width: 1200px; margin: 0 auto; }
+    .listings-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .filter-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .filter-tab { background: white; border: 1px solid var(--border); color: var(--text-muted); font-family: var(--font-body); font-size: .85rem; font-weight: 500; padding: .45rem 1.1rem; border-radius: 99px; cursor: pointer; transition: all .2s; }
+    .filter-tab.active, .filter-tab:hover { background: var(--green); border-color: var(--green); color: white; }
+    .listings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+    .property-card {
+      background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+      transition: all .25s; cursor: pointer;
+    }
+    .property-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card-image { height: 200px; background: var(--surface2); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .card-image-placeholder { font-size: 3.5rem; opacity: .4; }
+    .card-badge { position: absolute; top: .75rem; left: .75rem; background: var(--gold); color: white; font-size: .7rem; font-weight: 700; padding: .25rem .65rem; border-radius: 6px; text-transform: uppercase; letter-spacing: .04em; }
+    .card-verified { position: absolute; top: .75rem; left: .75rem; background: var(--green); color: white; font-size: .7rem; font-weight: 700; padding: .25rem .65rem; border-radius: 6px; display: flex; align-items: center; gap: .3rem; }
+    .card-verified svg { width: 10px; height: 10px; stroke: white; fill: none; stroke-width: 3; }
+    .card-wishlist {
+      position: absolute; top: .75rem; right: .75rem; width: 32px; height: 32px;
+      background: white; border: 1px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      transition: all .2s;
+    }
+    .card-wishlist:hover { background: #fef2f2; border-color: #fca5a5; }
+    .card-wishlist svg { width: 14px; height: 14px; stroke: var(--text-muted); fill: none; stroke-width: 2; }
+    .card-wishlist.active svg { stroke: #ef4444; fill: #ef4444; }
+    .card-body { padding: 1.1rem; }
+    .card-price { font-family: var(--font-display); font-size: 1.2rem; color: var(--text); margin-bottom: .3rem; }
+    .card-price span { font-family: var(--font-body); font-size: .8rem; color: var(--text-muted); font-weight: 400; }
+    .card-title { font-size: .9rem; font-weight: 600; color: var(--text); margin-bottom: .35rem; }
+    .card-location { font-size: .8rem; color: var(--text-muted); margin-bottom: .85rem; display: flex; align-items: center; gap: .3rem; }
+    .card-location svg { width: 13px; height: 13px; stroke: var(--green); fill: none; stroke-width: 2; flex-shrink: 0; }
+    .card-features { display: flex; gap: .5rem; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: .75rem; }
+    .card-feature { font-size: .75rem; color: var(--text-muted); display: flex; align-items: center; gap: .3rem; background: var(--surface); padding: .2rem .6rem; border-radius: 6px; }
+    .card-feature svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .no-results { text-align: center; padding: 4rem 1rem; color: var(--text-muted); display: none; }
+    .no-results svg { width: 48px; height: 48px; stroke: var(--border); fill: none; stroke-width: 1.5; margin: 0 auto 1rem; display: block; }
+    .view-all-wrap { text-align: center; margin-top: 2.5rem; }
 
-/* Hero Search Card */
-.hero-search-card {
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 16px;
-  padding: 32px;
-  position: relative; z-index: 2;
-}
-.search-card-title {
-  font-family: var(--font-display);
-  font-size: 1.4rem; font-weight: 600;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-.search-card-sub { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+    /* ── STATS ── */
+    .stats-section { padding: 4rem clamp(1rem,4vw,2.5rem); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
+    .stat-num { font-family: var(--font-display); font-size: 2.5rem; color: var(--green); line-height: 1; margin-bottom: .4rem; }
+    .stat-label { font-size: .875rem; color: var(--text-muted); }
+    .stat-sub { font-size: .75rem; color: var(--text-light); margin-top: .2rem; }
 
-.search-tabs { display: flex; gap: 4px; margin-bottom: 24px; }
-.s-tab {
-  flex: 1; text-align: center;
-  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
-  color: rgba(255,255,255,0.5);
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.s-tab.active { background: var(--terra); color: var(--white); }
+    /* ── WHY ── */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .dashboard-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
+    .dash-header { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.25rem; }
+    .dash-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dash-header span { font-size: .8rem; font-weight: 600; color: var(--text-muted); }
+    .dash-metric { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: .75rem; display: flex; align-items: center; justify-content: space-between; }
+    .dash-metric-val { font-family: var(--font-display); font-size: 1.6rem; color: var(--text); }
+    .dash-metric-label { font-size: .8rem; color: var(--text-muted); }
+    .bar-chart { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+    .bar-chart-title { font-size: .8rem; font-weight: 600; color: var(--text-muted); margin-bottom: .75rem; }
+    .bar-row { display: flex; align-items: center; gap: .6rem; margin-bottom: .5rem; }
+    .bar-row-label { font-size: .75rem; color: var(--text-muted); width: 72px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 8px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--green); border-radius: 99px; }
+    .bar-pct { font-size: .72rem; font-weight: 600; color: var(--green); width: 32px; text-align: right; }
+    .features-list { display: grid; gap: 1.25rem; }
+    .feature-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .feature-icon { width: 42px; height: 42px; background: var(--green-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .feature-icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .feature-text h4 { font-size: .9rem; font-weight: 600; margin-bottom: .25rem; }
+    .feature-text p { font-size: .825rem; color: var(--text-muted); line-height: 1.5; }
 
-.search-field { margin-bottom: 16px; }
-.search-field label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
-.search-field select,
-.search-field input {
-  width: 100%;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 0.9rem; font-weight: 400;
-  padding: 12px 16px;
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
-  appearance: none;
-}
-.search-field select:focus,
-.search-field input:focus { border-color: rgba(200,150,26,0.5); background: rgba(255,255,255,0.1); }
-.search-field select option { background: var(--forest-mid); color: var(--white); }
-.search-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.btn-search {
-  width: 100%; margin-top: 8px;
-  background: linear-gradient(135deg, var(--gold) 0%, var(--terra) 100%);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 0.95rem; font-weight: 600;
-  padding: 16px;
-  border: none; border-radius: 8px;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s;
-  letter-spacing: 0.02em;
-}
-.btn-search:hover { opacity: 0.92; transform: translateY(-1px); }
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--surface); padding: 5rem clamp(1rem,4vw,2.5rem); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; max-width: 1200px; margin: 0 auto; }
+    .testimonial-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .stars { color: #f59e0b; font-size: .9rem; margin-bottom: 1rem; letter-spacing: .1em; }
+    .testimonial-text { font-size: .9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: .75rem; }
+    .author-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--green-light); display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; color: var(--green-dark); flex-shrink: 0; }
+    .author-name { font-size: .85rem; font-weight: 600; }
+    .author-role { font-size: .75rem; color: var(--text-muted); }
 
-.card-stats {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 1px; background: rgba(255,255,255,0.08);
-  border-radius: 10px; overflow: hidden;
-  margin-top: 24px;
-}
-.card-stat {
-  background: rgba(255,255,255,0.04);
-  padding: 16px 12px; text-align: center;
-}
-.card-stat-n { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--gold-light); display: block; }
-.card-stat-l { font-size: 0.68rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; }
+    /* ── LANDLORDS ── */
+    .landlords-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .steps-vertical { display: grid; gap: 1.5rem; }
+    .step-v { display: flex; gap: 1.1rem; align-items: flex-start; }
+    .step-v-num { width: 36px; height: 36px; background: var(--green); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .85rem; font-weight: 700; flex-shrink: 0; }
+    .step-v-content h4 { font-size: .9rem; font-weight: 600; margin-bottom: .3rem; }
+    .step-v-content p { font-size: .825rem; color: var(--text-muted); line-height: 1.5; }
+    .dashboard-preview { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
+    .prop-row { display: flex; align-items: center; justify-content: space-between; background: white; border: 1px solid var(--border); border-radius: 10px; padding: .85rem 1rem; margin-bottom: .75rem; }
+    .prop-icon { width: 36px; height: 36px; background: var(--surface); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .prop-icon svg { width: 18px; height: 18px; stroke: var(--text-muted); fill: none; stroke-width: 2; }
+    .prop-info { flex: 1; padding: 0 .75rem; }
+    .prop-name { font-size: .85rem; font-weight: 600; }
+    .prop-meta { font-size: .75rem; color: var(--text-muted); }
+    .prop-live { font-size: .7rem; font-weight: 700; color: var(--green); background: var(--green-light); padding: .2rem .6rem; border-radius: 6px; }
+    .prop-amount { font-size: .9rem; font-weight: 600; color: var(--text); }
+    .earnings-box { background: var(--green); border-radius: 12px; padding: 1.1rem 1.25rem; color: white; }
+    .earnings-label { font-size: .8rem; opacity: .8; margin-bottom: .4rem; }
+    .earnings-amount { font-family: var(--font-display); font-size: 1.8rem; }
+    .earnings-sub { font-size: .75rem; opacity: .7; margin-top: .25rem; }
 
-/* Hero bottom strip */
-.hero-strip {
-  position: relative; z-index: 2;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-top: 80px;
-  padding: 24px 0;
-}
-.hero-strip-inner {
-  max-width: 1280px; margin: 0 auto; padding: 0 40px;
-  display: flex; align-items: center; gap: 48px; flex-wrap: wrap;
-}
-.strip-label { font-size: 0.72rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
-.strip-logos { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
-.strip-logo { font-size: 0.78rem; color: rgba(255,255,255,0.3); font-weight: 500; }
+    /* ── PRICING ── */
+    .pricing-section { background: var(--surface); padding: 5rem clamp(1rem,4vw,2.5rem); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; max-width: 1200px; margin: 0 auto; }
+    .pricing-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; position: relative; }
+    .pricing-card.featured { border-color: var(--green); border-width: 2px; }
+    .pricing-popular { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: white; font-size: .7rem; font-weight: 700; padding: .3rem .9rem; border-radius: 99px; white-space: nowrap; letter-spacing: .04em; text-transform: uppercase; }
+    .pricing-icon { font-size: 1.5rem; margin-bottom: .75rem; }
+    .pricing-name { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: .5rem; }
+    .pricing-rate { font-family: var(--font-display); font-size: 2.4rem; line-height: 1; margin-bottom: .3rem; }
+    .pricing-rate .unit { font-family: var(--font-body); font-size: .85rem; color: var(--text-muted); font-weight: 400; }
+    .pricing-note { font-size: .8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .pricing-features { list-style: none; margin-bottom: 1.75rem; display: grid; gap: .6rem; }
+    .pricing-features li { font-size: .85rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: .6rem; }
+    .pricing-features li::before { content: ''; width: 16px; height: 16px; background: var(--green-light); border-radius: 50%; flex-shrink: 0; margin-top: 2px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 3.5L13 4.5' stroke='%2316a34a' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: contain; }
 
-/* ════════════════════════════════════════
-   HOW IT WORKS
-════════════════════════════════════════ */
-#how {
-  padding: 120px 40px;
-  background: var(--cream);
-  max-width: 100%;
-}
-.section-wrap { max-width: 1280px; margin: 0 auto; }
+    /* ── CTA ── */
+    .cta-section { padding: 6rem clamp(1rem,4vw,2.5rem); text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #f0fdf4 100%); border-top: 1px solid #bbf7d0; }
+    .cta-section h2 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.25rem; }
+    .cta-section h2 em { font-style: italic; color: var(--green); }
+    .cta-section p { font-size: 1.05rem; color: var(--text-muted); max-width: 520px; margin: 0 auto 2.5rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-.tag {
-  display: inline-block;
-  font-size: 0.7rem; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--terra);
-  margin-bottom: 16px;
-  position: relative;
-  padding-left: 20px;
-}
-.tag::before { content:''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 1.5px; background: var(--terra); }
+    /* ── FOOTER ── */
+    footer { background: var(--text); color: #d1cfc9; padding: 3.5rem clamp(1rem,4vw,2.5rem) 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    .footer-brand .nav-logo { color: white; display: inline-block; margin-bottom: .75rem; }
+    .footer-brand p { font-size: .85rem; color: #9c9890; line-height: 1.6; max-width: 260px; }
+    .footer-col h5 { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #6b6860; margin-bottom: .85rem; }
+    .footer-col a { display: block; font-size: .85rem; color: #9c9890; text-decoration: none; margin-bottom: .5rem; transition: color .2s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid #2d2d2a; padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: .8rem; color: #6b6860; }
+    .lang-switcher { display: flex; gap: .5rem; }
+    .lang-btn { background: none; border: 1px solid #2d2d2a; color: #6b6860; font-family: var(--font-body); font-size: .75rem; padding: .3rem .75rem; border-radius: 6px; cursor: pointer; transition: all .2s; }
+    .lang-btn:hover, .lang-btn.active { border-color: var(--green); color: var(--green); }
 
-.h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  font-weight: 300; letter-spacing: -0.02em;
-  line-height: 1.1;
-  color: var(--ink);
-}
-.h2 em { font-style: italic; color: var(--sage); }
-.section-intro { font-size: 1rem; color: var(--muted); max-width: 500px; line-height: 1.75; margin-top: 16px; }
+    /* ── MODAL ── */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity .25s; }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal { background: white; border-radius: var(--radius-lg); padding: 2rem; max-width: 480px; width: 100%; max-height: 90vh; overflow-y: auto; transform: scale(.95) translateY(10px); transition: transform .25s; }
+    .modal-overlay.open .modal { transform: scale(1) translateY(0); }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+    .modal-title { font-family: var(--font-display); font-size: 1.4rem; }
+    .modal-close { background: none; border: 1px solid var(--border); border-radius: 8px; padding: .4rem; cursor: pointer; color: var(--text-muted); line-height: 0; transition: all .2s; }
+    .modal-close:hover { background: var(--surface); }
+    .modal-close svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-muted); margin-bottom: .4rem; }
+    .form-input { width: 100%; padding: .7rem 1rem; border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-body); font-size: .9rem; color: var(--text); background: white; transition: border-color .2s, box-shadow .2s; }
+    .form-input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(22,163,74,.15); }
+    .form-radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+    .form-radio { display: flex; align-items: center; gap: .5rem; padding: .65rem .9rem; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: all .2s; }
+    .form-radio:hover { border-color: var(--green); background: var(--green-light); }
+    .form-radio input { accent-color: var(--green); }
+    .form-radio span { font-size: .875rem; font-weight: 500; }
+    .form-success { text-align: center; padding: 1.5rem 0; }
+    .form-success-icon { width: 56px; height: 56px; background: var(--green-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+    .form-success-icon svg { width: 28px; height: 28px; stroke: var(--green); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .form-success h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: .5rem; }
+    .form-success p { font-size: .9rem; color: var(--text-muted); }
 
-.how-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 2px;
-  margin-top: 72px;
-  background: var(--sand);
-  border-radius: 12px; overflow: hidden;
-}
-.how-card {
-  background: var(--cream);
-  padding: 48px 40px;
-  position: relative;
-  transition: background 0.3s;
-}
-.how-card:hover { background: var(--white); }
-.how-num {
-  font-family: var(--font-display);
-  font-size: 5rem; font-weight: 300;
-  color: var(--sand);
-  line-height: 1;
-  margin-bottom: 24px;
-  transition: color 0.3s;
-}
-.how-card:hover .how-num { color: var(--cream-warm); }
-.how-icon {
-  width: 52px; height: 52px;
-  background: var(--forest);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 24px;
-  transition: background 0.3s, transform 0.3s;
-}
-.how-card:hover .how-icon { background: var(--terra); transform: scale(1.05); }
-.how-card h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
-.how-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+    /* ── PROPERTY DETAIL MODAL ── */
+    .prop-modal-img { height: 220px; background: var(--surface2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 5rem; margin-bottom: 1.25rem; }
+    .prop-modal-price { font-family: var(--font-display); font-size: 1.6rem; color: var(--text); margin-bottom: .25rem; }
+    .prop-modal-title { font-size: 1.1rem; font-weight: 600; margin-bottom: .4rem; }
+    .prop-modal-loc { font-size: .875rem; color: var(--text-muted); display: flex; align-items: center; gap: .3rem; margin-bottom: 1.25rem; }
+    .prop-modal-features { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .prop-modal-feat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .4rem .9rem; font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: .4rem; }
+    .prop-modal-section { margin-bottom: 1.25rem; }
+    .prop-modal-section h4 { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); margin-bottom: .6rem; }
+    .prop-modal-desc { font-size: .875rem; color: var(--text-muted); line-height: 1.7; }
+    .contact-btn-group { display: flex; gap: .75rem; margin-top: 1.5rem; }
+    .btn-whatsapp { background: #25D366; color: white; border: none; font-family: var(--font-body); font-size: .875rem; font-weight: 600; padding: .65rem 1.25rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: .4rem; flex: 1; justify-content: center; transition: all .2s; }
+    .btn-whatsapp:hover { background: #1ebe57; }
 
-/* ════════════════════════════════════════
-   LISTINGS PREVIEW
-════════════════════════════════════════ */
-#listings {
-  padding: 120px 40px;
-  background: var(--forest);
-}
-#listings .section-wrap { max-width: 1280px; margin: 0 auto; }
-#listings .tag { color: var(--gold-light); }
-#listings .tag::before { background: var(--gold-light); }
-#listings .h2 { color: var(--white); }
-#listings .h2 em { color: var(--gold-light); }
-#listings .section-intro { color: rgba(255,255,255,0.5); }
+    /* ── TOAST ── */
+    .toast { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--text); color: white; padding: .75rem 1.25rem; border-radius: 10px; font-size: .875rem; z-index: 2000; opacity: 0; transform: translateY(10px); transition: all .3s; pointer-events: none; max-width: 300px; }
+    .toast.show { opacity: 1; transform: translateY(0); }
 
-.listings-header {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  margin-bottom: 56px; gap: 24px; flex-wrap: wrap;
-}
-.filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-.pill {
-  font-size: 0.78rem; font-weight: 500;
-  padding: 8px 18px;
-  border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.6);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.pill.active, .pill:hover { background: var(--terra); border-color: var(--terra); color: var(--white); }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .why-grid, .landlords-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .nav-actions .btn-ghost { display: none; }
+      .contact-btn-group { flex-direction: column; }
+    }
 
-.listings-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 48px; }
+    /* ── MOBILE NAV ── */
+    .mobile-nav { display: none; position: fixed; inset: 0; background: white; z-index: 200; flex-direction: column; padding: 5rem 2rem 2rem; gap: .5rem; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 1.1rem; font-weight: 500; color: var(--text); text-decoration: none; padding: .75rem 0; border-bottom: 1px solid var(--border); }
+    .mobile-nav-close { position: absolute; top: 1rem; right: 1.5rem; background: none; border: 1px solid var(--border); border-radius: 8px; padding: .5rem .65rem; cursor: pointer; }
+    .mobile-nav-close svg { width: 18px; height: 18px; stroke: var(--text); fill: none; stroke-width: 2; }
 
-.listing-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s var(--ease), box-shadow 0.3s, background 0.3s;
-  cursor: pointer;
-}
-.listing-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); background: rgba(255,255,255,0.06); }
-
-.listing-img {
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-}
-.listing-img-inner {
-  width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 3rem;
-  transition: transform 0.5s var(--ease);
-}
-.listing-card:hover .listing-img-inner { transform: scale(1.05); }
-.listing-badge {
-  position: absolute; top: 14px; left: 14px;
-  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 5px 10px; border-radius: 4px;
-}
-.badge-verified { background: rgba(14,42,28,0.85); color: #5fcb87; border: 1px solid rgba(95,203,135,0.3); }
-.badge-featured { background: rgba(196,98,45,0.85); color: var(--white); }
-.listing-fav {
-  position: absolute; top: 12px; right: 12px;
-  width: 32px; height: 32px;
-  background: rgba(14,42,28,0.7);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.listing-fav:hover { background: rgba(196,98,45,0.8); }
-
-.listing-body { padding: 20px 22px 24px; }
-.listing-price {
-  font-family: var(--font-display);
-  font-size: 1.5rem; font-weight: 600;
-  color: var(--gold-light);
-  margin-bottom: 4px;
-}
-.listing-price span { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.4); }
-.listing-name { font-size: 0.95rem; font-weight: 500; color: var(--white); margin-bottom: 6px; }
-.listing-loc {
-  font-size: 0.78rem; color: rgba(255,255,255,0.4);
-  display: flex; align-items: center; gap: 4px;
-  margin-bottom: 16px;
-}
-.listing-amenities {
-  display: flex; gap: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-.amenity { font-size: 0.76rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 4px; }
-
-.listings-cta { text-align: center; }
-.btn-outline-gold {
-  display: inline-flex; align-items: center; gap: 10px;
-  border: 1px solid rgba(200,150,26,0.4);
-  color: var(--gold-light);
-  font-size: 0.9rem; font-weight: 500;
-  padding: 14px 36px;
-  border-radius: var(--r);
-  transition: all 0.2s;
-}
-.btn-outline-gold:hover { background: rgba(200,150,26,0.1); border-color: var(--gold-light); }
-
-/* ════════════════════════════════════════
-   WHY RENTEASE
-════════════════════════════════════════ */
-#why {
-  padding: 120px 40px;
-  background: var(--cream-warm);
-}
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 72px; }
-.why-visual {
-  position: relative;
-}
-.why-main-card {
-  background: var(--forest);
-  border-radius: 16px;
-  padding: 40px;
-  position: relative; overflow: hidden;
-}
-.why-main-card::before {
-  content: '';
-  position: absolute; top: -60px; right: -60px;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(196,98,45,0.2) 0%, transparent 70%);
-}
-.why-card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
-.why-logo-badge {
-  width: 48px; height: 48px;
-  background: var(--terra);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem;
-}
-.why-card-head-text h4 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--white); }
-.why-card-head-text p { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
-
-.why-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-.why-stat {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px; padding: 20px;
-}
-.why-stat-n { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--gold-light); display: block; }
-.why-stat-l { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 4px; }
-.why-bar-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
-.why-bar { background: rgba(255,255,255,0.08); border-radius: 4px; height: 8px; overflow: hidden; margin-bottom: 12px; }
-.why-bar-fill { height: 100%; border-radius: 4px; }
-.bar-green { background: linear-gradient(90deg, var(--sage), var(--sage-light)); }
-.bar-terra { background: linear-gradient(90deg, var(--terra), var(--terra-light)); }
-.bar-gold { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
-
-.why-float-card {
-  position: absolute; bottom: -24px; right: -24px;
-  background: var(--white);
-  border-radius: 12px;
-  padding: 20px 24px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-  display: flex; align-items: center; gap: 14px;
-}
-.why-float-icon { font-size: 1.8rem; }
-.why-float-text h5 { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
-.why-float-text p { font-size: 0.75rem; color: var(--muted); }
-
-.why-features { }
-.why-feature {
-  display: flex; gap: 20px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--sand);
-  transition: padding-left 0.3s;
-}
-.why-feature:first-child { padding-top: 0; }
-.why-feature:last-child { border-bottom: none; }
-.why-feature:hover { padding-left: 6px; }
-.why-feat-icon {
-  width: 44px; height: 44px; flex-shrink: 0;
-  background: var(--white);
-  border: 1px solid var(--sand);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
-  transition: background 0.2s, border-color 0.2s;
-}
-.why-feature:hover .why-feat-icon { background: var(--forest); border-color: var(--forest); }
-.why-feat-text h4 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
-.why-feat-text p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
-
-/* ════════════════════════════════════════
-   MARKET / STATS STRIP
-════════════════════════════════════════ */
-#market {
-  background: var(--forest-mid);
-  padding: 80px 40px;
-}
-.market-inner { max-width: 1280px; margin: 0 auto; }
-.market-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 12px; overflow: hidden; }
-.market-stat {
-  background: rgba(14,42,28,0.8);
-  padding: 40px 36px;
-  text-align: center;
-  position: relative;
-  transition: background 0.3s;
-}
-.market-stat:hover { background: rgba(31,82,54,0.8); }
-.market-stat::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 3px; background: var(--terra); transition: width 0.4s; }
-.market-stat:hover::after { width: 60%; }
-.ms-num { font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: var(--white); display: block; margin-bottom: 6px; }
-.ms-num sup { font-size: 1.4rem; }
-.ms-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
-.ms-sub { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
-
-/* ════════════════════════════════════════
-   TESTIMONIALS
-════════════════════════════════════════ */
-#testimonials { padding: 120px 40px; background: var(--cream); }
-.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 64px; }
-.testi-card {
-  background: var(--white);
-  border: 1px solid var(--sand);
-  border-radius: 12px;
-  padding: 36px 32px;
-  position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.testi-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
-.testi-card::before { content: '\201C'; font-family: var(--font-display); font-size: 6rem; color: var(--sand); position: absolute; top: -10px; left: 24px; line-height: 1; }
-.testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 20px; letter-spacing: 2px; }
-.testi-text { font-size: 0.92rem; color: var(--ink-mid); line-height: 1.75; margin-bottom: 28px; position: relative; z-index: 1; }
-.testi-author { display: flex; align-items: center; gap: 14px; }
-.testi-avatar {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--forest);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; color: var(--white);
-  font-family: var(--font-display); font-weight: 600;
-  flex-shrink: 0;
-}
-.testi-author-name { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
-.testi-author-role { font-size: 0.75rem; color: var(--muted); }
-
-/* ════════════════════════════════════════
-   FOR LANDLORDS
-════════════════════════════════════════ */
-#landlords { padding: 120px 40px; background: var(--forest); }
-#landlords .tag { color: var(--gold-light); }
-#landlords .tag::before { background: var(--gold-light); }
-#landlords .h2 { color: var(--white); }
-.landlords-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 64px; }
-.landlords-steps { }
-.l-step {
-  display: flex; gap: 20px;
-  margin-bottom: 32px;
-  padding: 24px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: background 0.2s, border-color 0.2s;
-}
-.l-step:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
-.l-step-num {
-  font-family: var(--font-display);
-  font-size: 2rem; font-weight: 300;
-  color: var(--gold);
-  min-width: 36px; text-align: center;
-}
-.l-step h4 { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
-.l-step p { font-size: 0.84rem; color: rgba(255,255,255,0.45); line-height: 1.65; }
-.l-panel {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 16px; padding: 36px;
-}
-.l-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
-.l-panel-header h4 { font-size: 0.88rem; font-weight: 600; color: var(--white); }
-.l-live-dot { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: rgba(255,255,255,0.4); }
-.l-live-dot::before { content: ''; width: 8px; height: 8px; background: #4caf77; border-radius: 50%; animation: pulse 2s infinite; }
-.l-listing-row {
-  display: flex; align-items: center; gap: 14px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.l-listing-row:last-child { border-bottom: none; }
-.l-listing-thumb {
-  width: 48px; height: 48px; border-radius: 8px;
-  background: rgba(255,255,255,0.08);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; flex-shrink: 0;
-}
-.l-listing-info { flex: 1; }
-.l-listing-info h5 { font-size: 0.85rem; font-weight: 500; color: var(--white); margin-bottom: 2px; }
-.l-listing-info span { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
-.l-listing-price { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--gold-light); }
-.l-earnings {
-  margin-top: 24px;
-  background: rgba(200,150,26,0.08);
-  border: 1px solid rgba(200,150,26,0.2);
-  border-radius: 10px; padding: 20px 24px;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.l-earnings-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
-.l-earnings-val { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; color: var(--gold-light); }
-
-/* ════════════════════════════════════════
-   PRICING / COMMISSION
-════════════════════════════════════════ */
-#pricing { padding: 120px 40px; background: var(--cream-warm); }
-.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 64px; }
-.pricing-card {
-  background: var(--white);
-  border: 1px solid var(--sand);
-  border-radius: 16px; padding: 40px 36px;
-  position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.pricing-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
-.pricing-card.featured {
-  background: var(--forest);
-  border-color: transparent;
-  box-shadow: 0 20px 60px rgba(14,42,28,0.2);
-}
-.pricing-card.featured:hover { box-shadow: 0 28px 80px rgba(14,42,28,0.3); }
-.pricing-feat-badge {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  background: var(--terra);
-  color: var(--white);
-  font-size: 0.68rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 6px 16px; border-radius: 100px;
-  white-space: nowrap;
-}
-.pricing-icon { font-size: 2rem; margin-bottom: 20px; }
-.pricing-plan { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-.pricing-card.featured .pricing-plan { color: rgba(255,255,255,0.5); }
-.pricing-rate { font-family: var(--font-display); font-size: 3.5rem; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 4px; }
-.pricing-rate sup { font-size: 1.5rem; vertical-align: super; }
-.pricing-card.featured .pricing-rate { color: var(--white); }
-.pricing-rate-desc { font-size: 0.8rem; color: var(--muted); margin-bottom: 32px; }
-.pricing-card.featured .pricing-rate-desc { color: rgba(255,255,255,0.4); }
-.pricing-features { margin-bottom: 36px; }
-.pf { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--sand); font-size: 0.85rem; color: var(--ink-mid); }
-.pricing-card.featured .pf { border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); }
-.pf:last-child { border-bottom: none; }
-.pf::before { content: '✓'; color: var(--sage); font-weight: 700; flex-shrink: 0; }
-.pricing-card.featured .pf::before { color: var(--gold-light); }
-.btn-pricing {
-  width: 100%; text-align: center;
-  padding: 14px; border-radius: 8px;
-  font-size: 0.88rem; font-weight: 600;
-  transition: all 0.2s;
-}
-.btn-pricing-outline { border: 1.5px solid var(--sand); color: var(--ink); }
-.btn-pricing-outline:hover { border-color: var(--forest); background: var(--forest); color: var(--white); }
-.btn-pricing-fill { background: var(--terra); color: var(--white); }
-.btn-pricing-fill:hover { background: var(--terra-light); }
-
-/* ════════════════════════════════════════
-   CTA BANNER
-════════════════════════════════════════ */
-#cta-banner {
-  background: linear-gradient(135deg, var(--terra) 0%, #a04520 100%);
-  padding: 100px 40px;
-  text-align: center;
-  position: relative; overflow: hidden;
-}
-#cta-banner::before {
-  content: 'RENTEASE';
-  font-family: var(--font-display);
-  font-size: 20vw; font-weight: 700;
-  color: rgba(255,255,255,0.04);
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  white-space: nowrap; pointer-events: none;
-}
-.cta-banner-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
-.cta-banner-inner h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  font-weight: 300; color: var(--white);
-  line-height: 1.15; margin-bottom: 20px;
-}
-.cta-banner-inner h2 em { font-style: italic; }
-.cta-banner-inner p { font-size: 1rem; color: rgba(255,255,255,0.7); margin-bottom: 40px; }
-.cta-banner-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-.btn-white {
-  background: var(--white);
-  color: var(--terra);
-  font-size: 0.92rem; font-weight: 700;
-  padding: 16px 36px;
-  border-radius: var(--r);
-  transition: all 0.2s;
-  display: inline-flex; align-items: center; gap: 8px;
-}
-.btn-white:hover { background: var(--cream); transform: translateY(-2px); }
-.btn-ghost-white {
-  border: 1px solid rgba(255,255,255,0.4);
-  color: var(--white);
-  font-size: 0.92rem; font-weight: 500;
-  padding: 16px 36px;
-  border-radius: var(--r);
-  transition: all 0.2s;
-}
-.btn-ghost-white:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
-
-/* ════════════════════════════════════════
-   FOOTER
-════════════════════════════════════════ */
-footer {
-  background: var(--ink);
-  color: rgba(255,255,255,0.5);
-  padding: 80px 40px 40px;
-}
-.footer-inner { max-width: 1280px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 64px; }
-.footer-brand .f-logo { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 16px; }
-.footer-brand .f-logo em { font-style: normal; color: var(--gold-light); }
-.footer-brand p { font-size: 0.85rem; line-height: 1.75; max-width: 280px; color: rgba(255,255,255,0.4); }
-.footer-col h5 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px; }
-.footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.5); padding: 6px 0; transition: color 0.2s; }
-.footer-col a:hover { color: var(--white); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer-bottom p { font-size: 0.78rem; }
-.footer-langs { display: flex; gap: 16px; }
-.footer-langs a { font-size: 0.78rem; color: rgba(255,255,255,0.3); transition: color 0.2s; }
-.footer-langs a:hover { color: var(--white); }
-.footer-langs .active { color: var(--gold-light); }
-
-/* ════════════════════════════════════════
-   ANIMATIONS
-════════════════════════════════════════ */
-.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
-.reveal.up { opacity: 1; transform: none; }
-.reveal-d1 { transition-delay: 0.1s; }
-.reveal-d2 { transition-delay: 0.2s; }
-.reveal-d3 { transition-delay: 0.3s; }
-.reveal-d4 { transition-delay: 0.4s; }
-
-/* ════════════════════════════════════════
-   RESPONSIVE
-════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .hero-content { grid-template-columns: 1fr; gap: 40px; }
-  .hero-search-card { max-width: 520px; }
-  .why-grid, .landlords-grid { grid-template-columns: 1fr; gap: 48px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .how-grid { grid-template-columns: 1fr; }
-  .listings-grid { grid-template-columns: 1fr 1fr; }
-  .market-stats { grid-template-columns: 1fr 1fr; }
-  .testi-grid { grid-template-columns: 1fr 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-  .why-float-card { position: relative; bottom: auto; right: auto; margin-top: 20px; }
-}
-
-@media (max-width: 768px) {
-  .nav-links, .nav-actions { display: none; }
-  .hamburger { display: flex; }
-  #hero, #how, #listings, #why, #market, #testimonials, #landlords, #pricing, #cta-banner { padding: 80px 24px; }
-  footer { padding: 60px 24px 32px; }
-  .hero-content { padding: 40px 0 0; }
-  .hero-strip-inner { padding: 0; }
-  .listings-grid { grid-template-columns: 1fr; }
-  .testi-grid { grid-template-columns: 1fr; }
-  .market-stats { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .search-row { grid-template-columns: 1fr; }
-  .hero-stats-strip { display: none; }
-  .nav-inner { padding: 0 20px; }
-}
-</style>
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate { opacity: 0; animation: fadeUp .5s ease forwards; }
+    .animate.delay-1 { animation-delay: .1s; }
+    .animate.delay-2 { animation-delay: .2s; }
+    .animate.delay-3 { animation-delay: .3s; }
+  </style>
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">RentEase</a>
-    <ul class="nav-links">
-      <li><a href="#listings">Browse Listings</a></li>
-      <li><a href="#why">Why RentEase</a></li>
-      <li><a href="#landlords">For Landlords</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="#" class="btn-nav-outline">Sign In</a>
-      <a href="#" class="btn-nav-fill">List Your Property</a>
-    </div>
-    <div class="hamburger" id="ham" onclick="toggleMobile()">
+<!-- ══ TOAST ══ -->
+<div class="toast" id="toast"></div>
+
+<!-- ══ MOBILE NAV ══ -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="toggleMobileNav()"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <a href="#listings" onclick="toggleMobileNav()">Browse Listings</a>
+  <a href="#why" onclick="toggleMobileNav()">Why RentEase</a>
+  <a href="#landlords" onclick="toggleMobileNav()">For Landlords</a>
+  <a href="#pricing" onclick="toggleMobileNav()">Pricing</a>
+  <div style="margin-top:1rem;display:flex;flex-direction:column;gap:.75rem;">
+    <button class="btn-ghost" onclick="toggleMobileNav();openModal('signin')">Sign In</button>
+    <button class="btn-primary" onclick="toggleMobileNav();openModal('list')">List Your Property →</button>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="#" aria-label="RentEase home">Rent<span>Ease</span></a>
+  <ul class="nav-links" role="list">
+    <li><a href="#listings">Browse Listings</a></li>
+    <li><a href="#why">Why RentEase</a></li>
+    <li><a href="#landlords">For Landlords</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-ghost" onclick="openModal('signin')">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Sign In
+    </button>
+    <button class="btn-primary" onclick="openModal('list')">List Your Property →</button>
+    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </div>
 </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#listings" onclick="toggleMobile()">Browse Listings</a>
-  <a href="#why" onclick="toggleMobile()">Why RentEase</a>
-  <a href="#landlords" onclick="toggleMobile()">For Landlords</a>
-  <a href="#pricing" onclick="toggleMobile()">Pricing</a>
-  <a href="#" onclick="toggleMobile()">Sign In</a>
-  <a href="#" onclick="toggleMobile()">List Your Property →</a>
+<!-- ══ HERO ══ -->
+<main>
+<section aria-label="Hero" style="background: linear-gradient(160deg, #ffffff 60%, #f0fdf4 100%);">
+  <div class="hero">
+    <div class="animate">
+      <div class="hero-badge">Kigali · Rwanda · East Africa</div>
+      <h1>Find your perfect <em>home in Rwanda</em> with confidence.</h1>
+      <p>Rwanda's first fully verified rental marketplace. Trusted landlords, legal agreements, and seamless Mobile Money payments — all in one place.</p>
+      <div class="hero-ctas">
+        <a href="#listings" class="btn-primary btn-large">Browse Listings →</a>
+        <a href="#how" class="btn-ghost btn-large">How it Works ↓</a>
+      </div>
+      <div class="hero-trust" role="list">
+        <div class="trust-item" role="listitem"><div class="trust-dot"></div>Verified Listings</div>
+        <div class="trust-item" role="listitem"><div class="trust-dot"></div>Secure Escrow</div>
+        <div class="trust-item" role="listitem"><div class="trust-dot"></div>Digital Agreements</div>
+        <div class="trust-item" role="listitem"><div class="trust-dot"></div>MTN MoMo & Airtel</div>
+      </div>
+    </div>
+    <div class="search-card animate delay-2" role="search" aria-label="Property search">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <p style="font-size:.9rem;font-weight:600;">Search Properties</p>
+        <span style="font-size:.78rem;color:var(--green);font-weight:600;">500+ verified listings</span>
+      </div>
+      <div class="search-tabs" role="tablist">
+        <button class="search-tab active" role="tab" aria-selected="true" onclick="setTab(this,'Rent')">Rent</button>
+        <button class="search-tab" role="tab" aria-selected="false" onclick="setTab(this,'Buy')">Buy</button>
+        <button class="search-tab" role="tab" aria-selected="false" onclick="setTab(this,'Short Stay')">Short Stay</button>
+      </div>
+      <div class="search-fields">
+        <div>
+          <div class="field-label">District / Neighbourhood</div>
+          <select class="field-select" id="searchDistrict" aria-label="Select district">
+            <option value="">All Kigali Districts</option>
+            <option value="Gasabo">Gasabo</option>
+            <option value="Kicukiro">Kicukiro</option>
+            <option value="Nyarugenge">Nyarugenge</option>
+            <option value="Kimihurura">Kimihurura</option>
+            <option value="Remera">Remera</option>
+            <option value="Gisozi">Gisozi</option>
+          </select>
+        </div>
+        <div>
+          <div class="field-label">Property Type</div>
+          <select class="field-select" id="searchType" aria-label="Select property type">
+            <option value="">All Types</option>
+            <option value="room">Single Room</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="commercial">Commercial</option>
+          </select>
+        </div>
+        <div>
+          <div class="field-label">Max Budget</div>
+          <select class="field-select" id="searchBudget" aria-label="Select max budget">
+            <option value="">Any Budget</option>
+            <option value="100000">Up to RWF 100K</option>
+            <option value="300000">Up to RWF 300K</option>
+            <option value="600000">Up to RWF 600K</option>
+            <option value="1000000">Up to RWF 1M</option>
+            <option value="9999999">RWF 1M+</option>
+          </select>
+        </div>
+        <button class="btn-primary search-btn" onclick="runSearch()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          Search Available Properties
+        </button>
+      </div>
+      <p class="search-count" id="searchCount" aria-live="polite"><strong>6</strong> properties shown · <strong>500+</strong> total listings</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARTNERS ══ -->
+<div class="partners" aria-label="Trusted partners">
+  <div class="partners-inner">
+    <span class="partners-label">Trusted partners</span>
+    <div class="partner-logos">
+      <span class="partner-pill">MTN MoMo</span>
+      <span class="partner-pill">Airtel Money</span>
+      <span class="partner-pill">RHA Rwanda</span>
+      <span class="partner-pill">Flutterwave</span>
+      <span class="partner-pill">RLMUA</span>
+    </div>
+  </div>
 </div>
 
-<!-- ═══ HERO ═══ -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-
-  <div class="hero-content">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Kigali · Rwanda · East Africa</div>
-      <h1 class="hero-h1">
-        Find your perfect<br>
-        <em>home in Rwanda</em><br>
-        <strong>with confidence.</strong>
-      </h1>
-      <p class="hero-sub">
-        Rwanda's first fully verified rental marketplace. Trusted landlords, legal agreements, 
-        and seamless Mobile Money payments — all in one place.
-      </p>
-      <div class="hero-actions">
-        <a href="#listings" class="btn-terra">Browse Listings <span class="btn-arrow">→</span></a>
-        <a href="#how" class="btn-ghost">How it Works <span class="btn-arrow">↓</span></a>
+<!-- ══ HOW IT WORKS ══ -->
+<section id="how" class="section" aria-labelledby="how-title">
+  <div class="section-label">How it Works</div>
+  <h2 class="section-title" id="how-title">Renting made <em>simple,</em> transparent, and safe.</h2>
+  <p class="section-sub">We built RentEase to solve the real problems Rwandan renters and landlords face — fraud, opacity, and unnecessary broker fees.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       </div>
-      <div class="hero-trust">
-        <div class="trust-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Verified Listings
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Secure Escrow
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Digital Agreements
-        </div>
-        <div class="trust-sep"></div>
-        <div class="trust-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          MTN MoMo &amp; Airtel
-        </div>
-      </div>
+      <h3>Search &amp; Discover</h3>
+      <p>Browse hundreds of verified listings by district, budget, property type, and move-in date. No registration required to start searching.</p>
     </div>
-
-    <!-- Search Card -->
-    <div class="hero-search-card">
-      <div class="search-card-title">Search Properties</div>
-      <div class="search-card-sub">500+ verified listings across Kigali</div>
-
-      <div class="search-tabs">
-        <div class="s-tab active" onclick="setTab(this)">Rent</div>
-        <div class="s-tab" onclick="setTab(this)">Buy</div>
-        <div class="s-tab" onclick="setTab(this)">Short Stay</div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
       </div>
-
-      <div class="search-field">
-        <label>District / Neighbourhood</label>
-        <select>
-          <option value="">All Kigali Districts</option>
-          <option>Gasabo</option>
-          <option>Kicukiro</option>
-          <option>Nyarugenge</option>
-          <option>Kimihurura</option>
-          <option>Remera</option>
-          <option>Gisozi</option>
-        </select>
-      </div>
-      <div class="search-row">
-        <div class="search-field">
-          <label>Property Type</label>
-          <select>
-            <option>All Types</option>
-            <option>Single Room</option>
-            <option>Apartment</option>
-            <option>House</option>
-            <option>Commercial</option>
-          </select>
-        </div>
-        <div class="search-field">
-          <label>Max Budget</label>
-          <select>
-            <option>Any Budget</option>
-            <option>Up to RWF 100K</option>
-            <option>Up to RWF 300K</option>
-            <option>Up to RWF 600K</option>
-            <option>Up to RWF 1M</option>
-            <option>RWF 1M+</option>
-          </select>
-        </div>
-      </div>
-      <button class="btn-search" onclick="searchListings()">🔍 &nbsp; Search Available Properties</button>
-
-      <div class="card-stats">
-        <div class="card-stat">
-          <span class="card-stat-n">500+</span>
-          <span class="card-stat-l">Listings</span>
-        </div>
-        <div class="card-stat">
-          <span class="card-stat-n">100%</span>
-          <span class="card-stat-l">Verified</span>
-        </div>
-        <div class="card-stat">
-          <span class="card-stat-n">48h</span>
-          <span class="card-stat-l">Verification</span>
-        </div>
-      </div>
+      <h3>Verified &amp; Trusted</h3>
+      <p>Every listing is backed by a verified Titre Foncier ownership certificate, cross-checked with the Rwanda Land Management Authority. No fakes.</p>
     </div>
-  </div>
-
-  <div class="hero-strip">
-    <div class="hero-strip-inner">
-      <span class="strip-label">Trusted partners</span>
-      <div class="strip-logos">
-        <span class="strip-logo">MTN MoMo</span>
-        <span class="strip-logo">Airtel Money</span>
-        <span class="strip-logo">Rwanda Housing Authority</span>
-        <span class="strip-logo">Flutterwave</span>
-        <span class="strip-logo">RLMUA</span>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       </div>
+      <h3>Sign &amp; Move In</h3>
+      <p>Sign a legally-compliant bilingual rental agreement digitally. Pay securely via MTN MoMo, Airtel Money, or card — held in escrow until you move in.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ HOW IT WORKS ═══ -->
-<section id="how">
-  <div class="section-wrap">
-    <div class="reveal">
-      <span class="tag">How it Works</span>
-      <h2 class="h2">Renting made <em>simple,</em><br>transparent, and safe.</h2>
-      <p class="section-intro">We built RentEase to solve the real problems Rwandan renters and landlords face every day — fraud, opacity, and unnecessary broker fees.</p>
-    </div>
-    <div class="how-grid reveal reveal-d1">
-      <div class="how-card">
-        <div class="how-num">01</div>
-        <div class="how-icon">🔍</div>
-        <h3>Search &amp; Discover</h3>
-        <p>Browse hundreds of verified listings by district, budget, property type, and move-in date. No registration required to start searching.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-num">02</div>
-        <div class="how-icon">✅</div>
-        <h3>Verified &amp; Trusted</h3>
-        <p>Every listing is backed by a verified Titre Foncier ownership certificate, cross-checked with the Rwanda Land Management Authority. No fakes.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-num">03</div>
-        <div class="how-icon">📄</div>
-        <h3>Sign &amp; Move In</h3>
-        <p>Sign a legally-compliant bilingual rental agreement digitally. Pay securely via MTN MoMo, Airtel Money, or card — held in escrow until you move in.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ LISTINGS ═══ -->
-<section id="listings">
-  <div class="section-wrap">
-    <div class="listings-header reveal">
+<!-- ══ LISTINGS ══ -->
+<section id="listings" class="listings-section" aria-labelledby="listings-title">
+  <div class="listings-inner">
+    <div class="listings-header">
       <div>
-        <span class="tag">Available Now</span>
-        <h2 class="h2">Featured <em>properties</em><br>in Kigali.</h2>
-      </div>
-      <div class="filter-pills">
-        <div class="pill active">All</div>
-        <div class="pill">Apartments</div>
-        <div class="pill">Houses</div>
-        <div class="pill">Rooms</div>
-        <div class="pill">Commercial</div>
+        <div class="section-label">Available Now</div>
+        <h2 class="section-title" id="listings-title">Featured <em>properties</em> in Kigali.</h2>
       </div>
     </div>
-
-    <div class="listings-grid">
-      <!-- Card 1 -->
-      <div class="listing-card reveal reveal-d1">
-        <div class="listing-img" style="background:linear-gradient(135deg,#1f5236,#0e2a1c)">
-          <div class="listing-img-inner">🏢</div>
-          <div class="listing-badge badge-featured">Featured</div>
-          <div class="listing-fav">♡</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">RWF 450,000 <span>/ month</span></div>
-          <div class="listing-name">Modern 2-Bedroom Apartment</div>
-          <div class="listing-loc">📍 Kimihurura, Gasabo</div>
-          <div class="listing-amenities">
-            <div class="amenity">🛏 2 beds</div>
-            <div class="amenity">🚿 2 baths</div>
-            <div class="amenity">🚗 Parking</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="listing-card reveal reveal-d2">
-        <div class="listing-img" style="background:linear-gradient(135deg,#2d4a1e,#1a3012)">
-          <div class="listing-img-inner">🏠</div>
-          <div class="listing-badge badge-verified">✓ Verified</div>
-          <div class="listing-fav">♡</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">RWF 250,000 <span>/ month</span></div>
-          <div class="listing-name">Furnished 1-Bedroom, City Views</div>
-          <div class="listing-loc">📍 Remera, Gasabo</div>
-          <div class="listing-amenities">
-            <div class="amenity">🛏 1 bed</div>
-            <div class="amenity">🚿 1 bath</div>
-            <div class="amenity">🌐 WiFi</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="listing-card reveal reveal-d3">
-        <div class="listing-img" style="background:linear-gradient(135deg,#3d2b0a,#241a06)">
-          <div class="listing-img-inner">🏡</div>
-          <div class="listing-badge badge-featured">Featured</div>
-          <div class="listing-fav">♡</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">RWF 1,200,000 <span>/ month</span></div>
-          <div class="listing-name">Executive Villa with Garden</div>
-          <div class="listing-loc">📍 Kiyovu, Nyarugenge</div>
-          <div class="listing-amenities">
-            <div class="amenity">🛏 4 beds</div>
-            <div class="amenity">🚿 3 baths</div>
-            <div class="amenity">🏊 Pool</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="listing-card reveal reveal-d1">
-        <div class="listing-img" style="background:linear-gradient(135deg,#1a2a3d,#0d1a26)">
-          <div class="listing-img-inner">🏗️</div>
-          <div class="listing-badge badge-verified">✓ Verified</div>
-          <div class="listing-fav">♡</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">RWF 85,000 <span>/ month</span></div>
-          <div class="listing-name">Self-Contained Single Room</div>
-          <div class="listing-loc">📍 Gisozi, Gasabo</div>
-          <div class="listing-amenities">
-            <div class="amenity">🛏 1 bed</div>
-            <div class="amenity">🚿 1 bath</div>
-            <div class="amenity">⚡ 24hr power</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="listing-card reveal reveal-d2">
-        <div class="listing-img" style="background:linear-gradient(135deg,#3d1a0a,#261006)">
-          <div class="listing-img-inner">🏬</div>
-          <div class="listing-badge badge-featured">Featured</div>
-          <div class="listing-fav">♡</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">RWF 600,000 <span>/ month</span></div>
-          <div class="listing-name">Commercial Office Space</div>
-          <div class="listing-loc">📍 CBD, Nyarugenge</div>
-          <div class="listing-amenities">
-            <div class="amenity">📐 80 m²</div>
-            <div class="amenity">🚗 Parking</div>
-            <div class="amenity">🔒 Security</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 6 -->
-      <div class="listing-card reveal reveal-d3">
-        <div class="listing-img" style="background:linear-gradient(135deg,#1a3d2a,#0d2619)">
-          <div class="listing-img-inner">🏘️</div>
-          <div class="listing-badge badge-verified">✓ Verified</div>
-          <div class="listing-fav">♡</div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-price">RWF 320,000 <span>/ month</span></div>
-          <div class="listing-name">3-Bedroom Family House</div>
-          <div class="listing-loc">📍 Kanombe, Kicukiro</div>
-          <div class="listing-amenities">
-            <div class="amenity">🛏 3 beds</div>
-            <div class="amenity">🚿 2 baths</div>
-            <div class="amenity">🌿 Garden</div>
-          </div>
-        </div>
-      </div>
+    <div class="filter-tabs" role="tablist" aria-label="Property type filter">
+      <button class="filter-tab active" role="tab" onclick="filterListings('all',this)">All</button>
+      <button class="filter-tab" role="tab" onclick="filterListings('apartment',this)">Apartments</button>
+      <button class="filter-tab" role="tab" onclick="filterListings('house',this)">Houses</button>
+      <button class="filter-tab" role="tab" onclick="filterListings('room',this)">Rooms</button>
+      <button class="filter-tab" role="tab" onclick="filterListings('commercial',this)">Commercial</button>
     </div>
-
-    <div class="listings-cta reveal">
-      <a href="#" class="btn-outline-gold">View All 500+ Listings <span>→</span></a>
+    <div class="listings-grid" id="listingsGrid" role="list" aria-label="Property listings">
+      <!-- JS renders cards here -->
+    </div>
+    <div class="no-results" id="noResults" role="status">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <p style="font-size:1rem;font-weight:600;margin-bottom:.5rem;">No properties found</p>
+      <p style="font-size:.875rem;">Try adjusting your filters or <a href="#" onclick="resetFilters();return false;" style="color:var(--green);">clear all filters</a>.</p>
+    </div>
+    <div class="view-all-wrap">
+      <button class="btn-primary btn-large" onclick="openModal('waitlist')">View All 500+ Listings →</button>
     </div>
   </div>
 </section>
 
-<!-- ═══ MARKET STATS ═══ -->
-<section id="market">
-  <div class="market-inner">
-    <div class="market-stats reveal">
-      <div class="market-stat">
-        <span class="ms-num">RWF <sup>500B</sup></span>
-        <div class="ms-label">Total Market Size</div>
-        <div class="ms-sub">Annual rental transactions in Rwanda</div>
+<!-- ══ STATS ══ -->
+<section class="stats-section" aria-labelledby="stats-heading">
+  <h2 id="stats-heading" class="sr-only">RentEase platform statistics</h2>
+  <div class="stats-inner">
+    <div><div class="stat-num">RWF 500B</div><div class="stat-label">Total Market Size</div><div class="stat-sub">Annual rental transactions in Rwanda</div></div>
+    <div><div class="stat-num">3M+</div><div class="stat-label">Kigali by 2030</div><div class="stat-sub">Projected population growth</div></div>
+    <div><div class="stat-num">62%</div><div class="stat-label">Mobile Internet</div><div class="stat-sub">And rising rapidly across Rwanda</div></div>
+    <div><div class="stat-num">10%</div><div class="stat-label">Our Commission</div><div class="stat-sub">vs 1–3 months for traditional brokers</div></div>
+  </div>
+</section>
+
+<!-- ══ WHY RENTEASE ══ -->
+<section id="why" class="section" aria-labelledby="why-title">
+  <div class="why-grid">
+    <div>
+      <div class="section-label">Why RentEase</div>
+      <h2 class="section-title" id="why-title">Built <em>differently,</em> for Rwanda.</h2>
+      <p class="section-sub">The incumbents replicate Western listing sites without solving Rwanda-specific trust, payment, and language problems. We built differently.</p>
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="feature-text"><h4>Document Verification</h4><p>Mandatory Titre Foncier upload and cross-verification with RLMUA. The only legally-anchored trust layer in Rwanda's rental market.</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+          <div class="feature-text"><h4>Secure Escrow Payments</h4><p>Pay via MTN MoMo, Airtel Money, or card. Funds held in escrow and released to landlords only after you confirm you've moved in.</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div class="feature-text"><h4>Digital Rental Agreements</h4><p>Bilingual English/Kinyarwanda legally-compliant contracts, e-signed and stored securely. Eliminates handshake deals.</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="feature-text"><h4>Transparent 10% Commission</h4><p>One fair commission — 10% of the first month's rent — disclosed upfront. Never hidden. A fraction of what traditional brokers charge.</p></div>
+        </div>
       </div>
-      <div class="market-stat">
-        <span class="ms-num">3M<sup>+</sup></span>
-        <div class="ms-label">Kigali by 2030</div>
-        <div class="ms-sub">Projected population growth</div>
+    </div>
+    <div class="dashboard-card" aria-label="Platform dashboard preview">
+      <div class="dash-header">
+        <div class="dash-dot" style="background:#ef4444"></div>
+        <div class="dash-dot" style="background:#f59e0b"></div>
+        <div class="dash-dot" style="background:#22c55e"></div>
+        <span style="margin-left:.5rem;">Platform Dashboard</span>
       </div>
-      <div class="market-stat">
-        <span class="ms-num">62<sup>%</sup></span>
-        <div class="ms-label">Mobile Internet</div>
-        <div class="ms-sub">And rising rapidly across Rwanda</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;">
+        <div class="dash-metric">
+          <div><div class="dash-metric-val">487</div><div class="dash-metric-label">Active Listings</div></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <div class="dash-metric">
+          <div><div class="dash-metric-val">94%</div><div class="dash-metric-label">Verification Rate</div></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
       </div>
-      <div class="market-stat">
-        <span class="ms-num">10<sup>%</sup></span>
-        <div class="ms-label">Our Commission</div>
-        <div class="ms-sub">vs 1–3 months for traditional brokers</div>
+      <div class="bar-chart">
+        <div class="bar-chart-title">Listings by District</div>
+        <div class="bar-row"><span class="bar-row-label">Gasabo</span><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span class="bar-pct">72%</span></div>
+        <div class="bar-row"><span class="bar-row-label">Nyarugenge</span><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div><span class="bar-pct">18%</span></div>
+        <div class="bar-row"><span class="bar-row-label">Kicukiro</span><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div><span class="bar-pct">10%</span></div>
+      </div>
+      <div style="margin-top:.75rem;padding:.75rem 1rem;background:var(--green-light);border-radius:10px;display:flex;align-items:center;gap:.6rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <span style="font-size:.8rem;font-weight:600;color:var(--green-dark);">Titre Foncier verified — every listing</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ WHY RENTEASE ═══ -->
-<section id="why">
-  <div class="section-wrap">
-    <div class="reveal">
-      <span class="tag">Why RentEase</span>
-      <h2 class="h2">Built <em>differently,</em><br>for Rwanda.</h2>
-      <p class="section-intro">The incumbents replicate Western listing sites without solving Rwanda-specific trust, payment, and language problems. We built differently.</p>
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials-section" aria-labelledby="testimonials-title">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-label" style="justify-content:center;display:flex;">Testimonials</div>
+      <h2 class="section-title" id="testimonials-title">Trusted by thousands <em>across Kigali.</em></h2>
     </div>
-
-    <div class="why-grid">
-      <div class="why-visual reveal">
-        <div class="why-main-card">
-          <div class="why-card-head">
-            <div class="why-logo-badge">🏠</div>
-            <div class="why-card-head-text">
-              <h4>Platform Dashboard</h4>
-              <p>Real-time rental insights</p>
-            </div>
-          </div>
-          <div class="why-stat-row">
-            <div class="why-stat">
-              <span class="why-stat-n">487</span>
-              <div class="why-stat-l">Active Listings</div>
-            </div>
-            <div class="why-stat">
-              <span class="why-stat-n">94%</span>
-              <div class="why-stat-l">Verification Rate</div>
-            </div>
-          </div>
-          <div class="why-bar-label">Listings by District</div>
-          <div class="why-bar"><div class="why-bar-fill bar-green" style="width:72%"></div></div>
-          <div class="why-bar-label">Gasabo — 72%</div>
-          <div class="why-bar"><div class="why-bar-fill bar-terra" style="width:18%"></div></div>
-          <div class="why-bar-label">Nyarugenge — 18%</div>
-          <div class="why-bar"><div class="why-bar-fill bar-gold" style="width:10%"></div></div>
-          <div class="why-bar-label">Kicukiro — 10%</div>
-        </div>
-        <div class="why-float-card">
-          <div class="why-float-icon">🛡️</div>
-          <div class="why-float-text">
-            <h5>Titre Foncier Verified</h5>
-            <p>Every listing cross-checked with RLMUA</p>
-          </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"I found my apartment in Remera in 3 days. The verification badge gave me confidence — I knew the landlord was legitimate before I even messaged them. No broker, no stress."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">AM</div>
+          <div><div class="author-name">Amina Mukandayisenga</div><div class="author-role">Tenant · Gasabo District</div></div>
         </div>
       </div>
-
-      <div class="why-features reveal reveal-d2">
-        <div class="why-feature">
-          <div class="why-feat-icon">🔐</div>
-          <div class="why-feat-text">
-            <h4>Document Verification</h4>
-            <p>Mandatory Titre Foncier upload and cross-verification with Rwanda Land Management Authority. The only legally-anchored trust layer in Rwanda's rental market.</p>
-          </div>
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"As a landlord with 3 apartments, I used to pay agents 2 months commission every time. RentEase costs me 10% of one month. My properties never stay vacant for more than 2 weeks now."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">JN</div>
+          <div><div class="author-name">Jean-Claude Nkurunziza</div><div class="author-role">Landlord · Kicukiro</div></div>
         </div>
-        <div class="why-feature">
-          <div class="why-feat-icon">💳</div>
-          <div class="why-feat-text">
-            <h4>Secure Escrow Payments</h4>
-            <p>Pay via MTN MoMo, Airtel Money, or card. Funds held in escrow and released to landlords only after you confirm you've moved in. Zero risk.</p>
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feat-icon">📝</div>
-          <div class="why-feat-text">
-            <h4>Digital Rental Agreements</h4>
-            <p>Bilingual English/Kinyarwanda legally-compliant contracts, e-signed and stored securely. Eliminates handshake deals and undocumented tenancies.</p>
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feat-icon">💸</div>
-          <div class="why-feat-text">
-            <h4>Transparent 10% Commission</h4>
-            <p>One fair commission — 10% of the first month's rent — disclosed upfront. Never hidden. Never multi-month. A fraction of what traditional brokers charge.</p>
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feat-icon">🇷🇼</div>
-          <div class="why-feat-text">
-            <h4>Kinyarwanda-First Design</h4>
-            <p>Full platform in English and Kinyarwanda. Built for the mobile-first Rwandan user. Designed for every income segment, from RWF 20K rooms to luxury villas.</p>
-          </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"I relocated from Nairobi and found a furnished flat in Kimihurura before I even arrived. Signed the agreement digitally, paid via MoMo. Moved in on day one. Absolutely seamless."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">GW</div>
+          <div><div class="author-name">Grace Wanjiku</div><div class="author-role">Expatriate Tenant · Nairobi → Kigali</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═══ -->
-<section id="testimonials">
-  <div class="section-wrap">
-    <div class="reveal">
-      <span class="tag">Testimonials</span>
-      <h2 class="h2">Trusted by thousands<br>across <em>Kigali.</em></h2>
+<!-- ══ FOR LANDLORDS ══ -->
+<section id="landlords" class="section" aria-labelledby="landlords-title">
+  <div class="landlords-grid">
+    <div>
+      <div class="section-label">For Landlords</div>
+      <h2 class="section-title" id="landlords-title">List smarter. <em>Earn more.</em> Stress less.</h2>
+      <p class="section-sub" style="margin-bottom:2rem;">Join hundreds of Kigali landlords earning more with less effort.</p>
+      <div class="steps-vertical">
+        <div class="step-v"><div class="step-v-num" aria-hidden="true">1</div><div class="step-v-content"><h4>Register &amp; Verify</h4><p>Sign up with your national ID and phone number. Upload your Titre Foncier and property documents. Verified within 24–48 hours.</p></div></div>
+        <div class="step-v"><div class="step-v-num" aria-hidden="true">2</div><div class="step-v-content"><h4>Create Your Listing</h4><p>Add property details, upload photos, set your price. Your listing goes live with a Verified badge that dramatically increases tenant trust.</p></div></div>
+        <div class="step-v"><div class="step-v-num" aria-hidden="true">3</div><div class="step-v-content"><h4>Receive &amp; Screen Tenants</h4><p>Get enquiries via SMS, WhatsApp, and in-platform messaging. Review tenant profiles and communicate directly.</p></div></div>
+        <div class="step-v"><div class="step-v-num" aria-hidden="true">4</div><div class="step-v-content"><h4>Sign &amp; Collect</h4><p>Execute a digital rental agreement and receive your first month's rent directly to your MoMo or bank account — net of 10% commission.</p></div></div>
+      </div>
+      <button class="btn-primary btn-large" style="margin-top:2rem;" onclick="openModal('list')">List Your Property Free →</button>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal reveal-d1">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">I found my apartment in Remera in 3 days. The verification badge gave me confidence — I knew the landlord was legitimate before I even messaged them. No broker, no stress.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">AM</div>
-          <div>
-            <div class="testi-author-name">Amina Mukandayisenga</div>
-            <div class="testi-author-role">Tenant · Gasabo District</div>
-          </div>
-        </div>
+    <div class="dashboard-preview" aria-label="Landlord dashboard preview">
+      <div style="font-size:.8rem;font-weight:600;color:var(--text-muted);margin-bottom:1rem;">My Properties Dashboard</div>
+      <div class="prop-row">
+        <div class="prop-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <div class="prop-info"><div class="prop-name">Apt 3A, Kimihurura</div><div class="prop-meta">2BR · 14 enquiries this week</div></div>
+        <div><span class="prop-live">Live</span><div class="prop-amount" style="margin-top:.2rem;font-size:.8rem;">450,000</div></div>
       </div>
-      <div class="testi-card reveal reveal-d2">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">As a landlord with 3 apartments, I used to pay agents 2 months commission every time. RentEase costs me 10% of one month. My properties never stay vacant for more than 2 weeks now.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">JN</div>
-          <div>
-            <div class="testi-author-name">Jean-Claude Nkurunziza</div>
-            <div class="testi-author-role">Landlord · Kicukiro</div>
-          </div>
-        </div>
+      <div class="prop-row">
+        <div class="prop-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="prop-info"><div class="prop-name">House, Kanombe</div><div class="prop-meta">3BR · 6 enquiries this week</div></div>
+        <div><span class="prop-live">Live</span><div class="prop-amount" style="margin-top:.2rem;font-size:.8rem;">320,000</div></div>
       </div>
-      <div class="testi-card reveal reveal-d3">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">I relocated from Nairobi and found a furnished flat in Kimihurura before I even arrived. Signed the agreement digitally, paid via MoMo. Moved in on day one. Absolutely seamless.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">GW</div>
-          <div>
-            <div class="testi-author-name">Grace Wanjiku</div>
-            <div class="testi-author-role">Expatriate Tenant · Nairobi → Kigali</div>
-          </div>
-        </div>
+      <div class="prop-row">
+        <div class="prop-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+        <div class="prop-info"><div class="prop-name">Studio, Remera</div><div class="prop-meta">1BR · Let agreed · Move-in: 1 Jun</div></div>
+        <div><span style="font-size:.7rem;font-weight:700;color:var(--gold);background:var(--gold-light);padding:.2rem .6rem;border-radius:6px;">Agreed</span><div class="prop-amount" style="margin-top:.2rem;font-size:.8rem;">180,000</div></div>
+      </div>
+      <div class="earnings-box" role="status" aria-label="Monthly earnings">
+        <div class="earnings-label">This Month's Earnings</div>
+        <div class="earnings-amount">RWF 855,000</div>
+        <div class="earnings-sub">After 10% RentEase commission</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOR LANDLORDS ═══ -->
-<section id="landlords">
-  <div class="section-wrap">
-    <div class="reveal">
-      <span class="tag">For Landlords</span>
-      <h2 class="h2">List smarter.<br><em>Earn more.</em> Stress less.</h2>
+<!-- ══ PRICING ══ -->
+<section id="pricing" class="pricing-section" aria-labelledby="pricing-title">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-label" style="justify-content:center;display:flex;">Transparent Pricing</div>
+      <h2 class="section-title" id="pricing-title">Simple, honest <em>commissions.</em></h2>
+      <p style="color:var(--text-muted);max-width:480px;margin:0 auto;">No subscription, no upfront fees, no surprises. You only pay when a tenant signs a lease.</p>
     </div>
-    <div class="landlords-grid">
-      <div class="landlords-steps reveal reveal-d1">
-        <div class="l-step">
-          <div class="l-step-num">1</div>
-          <div>
-            <h4>Register &amp; Verify</h4>
-            <p>Sign up with your national ID and phone number. Upload your Titre Foncier and property documents. Verified within 24–48 hours.</p>
-          </div>
-        </div>
-        <div class="l-step">
-          <div class="l-step-num">2</div>
-          <div>
-            <h4>Create Your Listing</h4>
-            <p>Add property details, upload photos, set your price. Your listing goes live with a Verified badge that dramatically increases tenant trust.</p>
-          </div>
-        </div>
-        <div class="l-step">
-          <div class="l-step-num">3</div>
-          <div>
-            <h4>Receive &amp; Screen Tenants</h4>
-            <p>Get enquiries via SMS, WhatsApp, and in-platform messaging. Review tenant profiles and communicate directly through the platform.</p>
-          </div>
-        </div>
-        <div class="l-step">
-          <div class="l-step-num">4</div>
-          <div>
-            <h4>Sign &amp; Collect</h4>
-            <p>Execute a digital rental agreement and receive your first month's rent directly to your MoMo or bank account — net of 10% commission.</p>
-          </div>
-        </div>
-        <a href="#" class="btn-terra" style="display:inline-flex;margin-top:8px">List Your Property Free <span class="btn-arrow">→</span></a>
-      </div>
-
-      <!-- Landlord dashboard mockup -->
-      <div class="l-panel reveal reveal-d2">
-        <div class="l-panel-header">
-          <h4>My Properties Dashboard</h4>
-          <div class="l-live-dot">Live</div>
-        </div>
-        <div class="l-listing-row">
-          <div class="l-listing-thumb">🏢</div>
-          <div class="l-listing-info">
-            <h5>Apt 3A, Kimihurura</h5>
-            <span>2BR · Active · 14 enquiries this week</span>
-          </div>
-          <div class="l-listing-price">450,000</div>
-        </div>
-        <div class="l-listing-row">
-          <div class="l-listing-thumb">🏠</div>
-          <div class="l-listing-info">
-            <h5>House, Kanombe</h5>
-            <span>3BR · Active · 6 enquiries this week</span>
-          </div>
-          <div class="l-listing-price">320,000</div>
-        </div>
-        <div class="l-listing-row">
-          <div class="l-listing-thumb">🏘️</div>
-          <div class="l-listing-info">
-            <h5>Studio, Remera</h5>
-            <span>1BR · Let agreed · Move-in: 1 Jun</span>
-          </div>
-          <div class="l-listing-price">180,000</div>
-        </div>
-        <div class="l-earnings">
-          <div>
-            <div class="l-earnings-label">This Month's Earnings</div>
-            <div class="l-earnings-label" style="color:rgba(255,255,255,0.25);font-size:0.68rem">After 10% RentEase commission</div>
-          </div>
-          <div class="l-earnings-val">RWF 855,000</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ PRICING ═══ -->
-<section id="pricing">
-  <div class="section-wrap">
-    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
-      <span class="tag">Transparent Pricing</span>
-      <h2 class="h2">Simple, honest <em>commissions.</em></h2>
-      <p class="section-intro" style="margin:16px auto 0">No subscription, no upfront listing fees, no surprises. You only pay when a tenant signs a lease.</p>
-    </div>
-
     <div class="pricing-grid">
-      <div class="pricing-card reveal reveal-d1">
-        <div class="pricing-icon">📋</div>
-        <div class="pricing-plan">Standard Listing</div>
-        <div class="pricing-rate"><sup></sup>10<sup>%</sup></div>
-        <div class="pricing-rate-desc">of first month's rent, on success</div>
-        <div class="pricing-features">
-          <div class="pf">Verified listing badge</div>
-          <div class="pf">Unlimited property photos</div>
-          <div class="pf">In-platform tenant messaging</div>
-          <div class="pf">Digital rental agreement</div>
-          <div class="pf">Escrow payment processing</div>
-          <div class="pf">SMS &amp; WhatsApp notifications</div>
+      <div class="pricing-card">
+        <div class="pricing-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         </div>
-        <a href="#" class="btn-pricing btn-pricing-outline">Get Started Free</a>
+        <div class="pricing-name">Standard Listing</div>
+        <div class="pricing-rate">10% <span class="unit">of first month's rent</span></div>
+        <div class="pricing-note">On success only — you pay nothing upfront</div>
+        <ul class="pricing-features">
+          <li>Verified listing badge</li>
+          <li>Unlimited property photos</li>
+          <li>In-platform tenant messaging</li>
+          <li>Digital rental agreement</li>
+          <li>Escrow payment processing</li>
+          <li>SMS &amp; WhatsApp notifications</li>
+        </ul>
+        <button class="btn-ghost" style="width:100%" onclick="openModal('list')">Get Started Free</button>
       </div>
-
-      <div class="pricing-card featured reveal reveal-d2">
-        <div class="pricing-feat-badge">Most Popular</div>
-        <div class="pricing-icon">⭐</div>
-        <div class="pricing-plan">Featured Listing</div>
-        <div class="pricing-rate" style="color:var(--gold-light)"><sup></sup>15<sup>%</sup></div>
-        <div class="pricing-rate-desc">of first month's rent, on success</div>
-        <div class="pricing-features">
-          <div class="pf">Everything in Standard</div>
-          <div class="pf">Homepage featured placement</div>
-          <div class="pf">Top of search results badge</div>
-          <div class="pf">Weekly tenant newsletter inclusion</div>
-          <div class="pf">"Verified &amp; Featured" trust badge</div>
-          <div class="pf">Priority support &amp; faster verification</div>
+      <div class="pricing-card featured">
+        <div class="pricing-popular">Most Popular</div>
+        <div class="pricing-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <a href="#" class="btn-pricing btn-pricing-fill">Upgrade to Featured</a>
+        <div class="pricing-name">Featured Listing</div>
+        <div class="pricing-rate">15% <span class="unit">of first month's rent</span></div>
+        <div class="pricing-note">On success only — everything in Standard, plus:</div>
+        <ul class="pricing-features">
+          <li>Homepage featured placement</li>
+          <li>Top of search results badge</li>
+          <li>Weekly tenant newsletter inclusion</li>
+          <li>"Verified &amp; Featured" trust badge</li>
+          <li>Priority support &amp; faster verification</li>
+          <li>All Standard features included</li>
+        </ul>
+        <button class="btn-primary" style="width:100%" onclick="openModal('list')">Upgrade to Featured →</button>
       </div>
-
-      <div class="pricing-card reveal reveal-d3">
-        <div class="pricing-icon">🏢</div>
-        <div class="pricing-plan">Property Manager</div>
-        <div class="pricing-rate"><sup>RWF</sup>30K<sup></sup></div>
-        <div class="pricing-rate-desc">per month · 5+ properties · Year 2</div>
-        <div class="pricing-features">
-          <div class="pf">Everything in Featured</div>
-          <div class="pf">Bulk listing management tools</div>
-          <div class="pf">Analytics &amp; occupancy dashboard</div>
-          <div class="pf">Rent payment tracking</div>
-          <div class="pf">Lease renewal reminders</div>
-          <div class="pf">Dedicated account manager</div>
+      <div class="pricing-card">
+        <div class="pricing-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
         </div>
-        <a href="#" class="btn-pricing btn-pricing-outline">Join Waitlist</a>
+        <div class="pricing-name">Property Manager</div>
+        <div class="pricing-rate">RWF 30K <span class="unit">per month · 5+ properties</span></div>
+        <div class="pricing-note">Join the waitlist — launching Q3 2025</div>
+        <ul class="pricing-features">
+          <li>Bulk listing management tools</li>
+          <li>Analytics &amp; occupancy dashboard</li>
+          <li>Rent payment tracking</li>
+          <li>Lease renewal reminders</li>
+          <li>Dedicated account manager</li>
+          <li>All Featured features included</li>
+        </ul>
+        <button class="btn-ghost" style="width:100%" onclick="openModal('waitlist')">Join Waitlist →</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CTA BANNER ═══ -->
-<section id="cta-banner">
-  <div class="cta-banner-inner reveal">
-    <h2>Rwanda's rental market<br>is <em>finally going digital.</em></h2>
-    <p>Whether you're searching for your next home or looking to fill your property — RentEase is built for you. Join thousands of Rwandans already renting smarter.</p>
-    <div class="cta-banner-buttons">
-      <a href="#" class="btn-white">🔍 &nbsp; Find a Property</a>
-      <a href="#" class="btn-ghost-white">List Your Property →</a>
-    </div>
+<!-- ══ CTA ══ -->
+<section class="cta-section" aria-labelledby="cta-title">
+  <h2 id="cta-title">Rwanda's rental market is <em>finally going digital.</em></h2>
+  <p>Whether you're searching for your next home or looking to fill your property — RentEase is built for you. Join thousands of Rwandans already renting smarter.</p>
+  <div class="cta-btns">
+    <a href="#listings" class="btn-primary btn-large">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      Find a Property
+    </a>
+    <button class="btn-ghost btn-large" onclick="openModal('list')">List Your Property →</button>
   </div>
 </section>
+</main>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
+<!-- ══ FOOTER ══ -->
+<footer role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-grid">
+    <div class="footer-top">
       <div class="footer-brand">
-        <div class="f-logo">Rent<em>Ease</em></div>
+        <a class="nav-logo" href="#" aria-label="RentEase home">Rent<span style="color:var(--green)">Ease</span></a>
         <p>Rwanda's premier digital rental marketplace. Verified listings, secure payments, and digital agreements — all in one place.</p>
-        <br>
-        <p style="font-size:0.75rem;color:rgba(255,255,255,0.2)">RentEase Ltd. · Registered with Rwanda Development Board · Kigali, Rwanda</p>
+        <p style="margin-top:.75rem;font-size:.75rem;color:#6b6860;">RentEase Ltd. · Registered with Rwanda Development Board · Kigali, Rwanda</p>
       </div>
       <div class="footer-col">
         <h5>For Tenants</h5>
-        <a href="#">Browse Listings</a>
-        <a href="#">How to Rent</a>
-        <a href="#">Tenant Safety</a>
-        <a href="#">Digital Agreements</a>
-        <a href="#">Payment Methods</a>
+        <a href="#listings">Browse Listings</a>
+        <a href="#how">How to Rent</a>
+        <a href="#why">Tenant Safety</a>
+        <a href="#how">Digital Agreements</a>
+        <a href="#why">Payment Methods</a>
       </div>
       <div class="footer-col">
         <h5>For Landlords</h5>
-        <a href="#">List a Property</a>
-        <a href="#">Verification Process</a>
-        <a href="#">Featured Listings</a>
-        <a href="#">Pricing</a>
-        <a href="#">Landlord Dashboard</a>
+        <a href="#" onclick="openModal('list');return false;">List a Property</a>
+        <a href="#why">Verification Process</a>
+        <a href="#pricing">Featured Listings</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#landlords">Landlord Dashboard</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
-        <a href="#">About RentEase</a>
-        <a href="#">Contact Us</a>
+        <a href="#why">About RentEase</a>
+        <a href="#" onclick="openModal('contact');return false;">Contact Us</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
-        <a href="#" style="color:var(--terra-light)">hello@rentease.rw</a>
+        <a href="mailto:hello@rentease.rw">hello@rentease.rw</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 RentEase Ltd. All rights reserved.</p>
-      <div class="footer-langs">
-        <a href="#" class="active">English</a>
-        <a href="#">Kinyarwanda</a>
-        <a href="#">Français</a>
+      <div class="lang-switcher" role="group" aria-label="Language selector">
+        <button class="lang-btn active" onclick="setLang(this,'en')">English</button>
+        <button class="lang-btn" onclick="setLang(this,'rw')">Kinyarwanda</button>
+        <button class="lang-btn" onclick="setLang(this,'fr')">Français</button>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- ═══ JS ═══ -->
+<!-- ══ SIGN IN MODAL ══ -->
+<div class="modal-overlay" id="modal-signin" role="dialog" aria-modal="true" aria-labelledby="signin-title" onclick="closeModalOutside(event,'signin')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title" id="signin-title">Sign in to RentEase</h2>
+      <button class="modal-close" onclick="closeModal('signin')" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div id="signin-form">
+      <div class="form-group">
+        <label for="signin-phone">Phone number or email</label>
+        <input class="form-input" type="text" id="signin-phone" placeholder="+250 7XX XXX XXX or email" />
+      </div>
+      <div class="form-group">
+        <label for="signin-pass">Password</label>
+        <input class="form-input" type="password" id="signin-pass" placeholder="Your password" />
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;padding:.8rem;" onclick="handleSignin()">Sign In</button>
+      <p style="text-align:center;margin-top:1rem;font-size:.85rem;color:var(--text-muted);">Don't have an account? <a href="#" onclick="switchModal('signin','waitlist');return false;" style="color:var(--green);font-weight:600;">Join Early Access</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LIST PROPERTY MODAL ══ -->
+<div class="modal-overlay" id="modal-list" role="dialog" aria-modal="true" aria-labelledby="list-title" onclick="closeModalOutside(event,'list')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title" id="list-title">List your property</h2>
+      <button class="modal-close" onclick="closeModal('list')" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div id="list-form">
+      <p style="font-size:.875rem;color:var(--text-muted);margin-bottom:1.25rem;">Join our early-access landlords. We'll verify your property and get you live within 48 hours.</p>
+      <div class="form-group">
+        <label for="list-name">Full name</label>
+        <input class="form-input" type="text" id="list-name" placeholder="Jean-Claude Nkurunziza" />
+      </div>
+      <div class="form-group">
+        <label for="list-phone">Phone number (MTN/Airtel)</label>
+        <input class="form-input" type="tel" id="list-phone" placeholder="+250 7XX XXX XXX" />
+      </div>
+      <div class="form-group">
+        <label for="list-district">Property district</label>
+        <select class="form-input field-select" id="list-district">
+          <option value="">Select district</option>
+          <option>Gasabo</option><option>Kicukiro</option><option>Nyarugenge</option>
+          <option>Kimihurura</option><option>Remera</option><option>Gisozi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Property type</label>
+        <div class="form-radio-group">
+          <label class="form-radio"><input type="radio" name="ptype" value="room" /><span>Single Room</span></label>
+          <label class="form-radio"><input type="radio" name="ptype" value="apartment" checked /><span>Apartment</span></label>
+          <label class="form-radio"><input type="radio" name="ptype" value="house" /><span>House</span></label>
+          <label class="form-radio"><input type="radio" name="ptype" value="commercial" /><span>Commercial</span></label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="list-plan">Listing plan</label>
+        <select class="form-input field-select" id="list-plan">
+          <option value="standard">Standard — 10% commission</option>
+          <option value="featured">Featured — 15% commission (recommended)</option>
+        </select>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;padding:.8rem;" onclick="handleListSubmit()">Submit Property →</button>
+    </div>
+    <div id="list-success" style="display:none;">
+      <div class="form-success">
+        <div class="form-success-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></div>
+        <h3>You're on the list!</h3>
+        <p>We'll call you within 24 hours to verify your property and get your listing live.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WAITLIST MODAL ══ -->
+<div class="modal-overlay" id="modal-waitlist" role="dialog" aria-modal="true" aria-labelledby="waitlist-title" onclick="closeModalOutside(event,'waitlist')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title" id="waitlist-title">Join Early Access</h2>
+      <button class="modal-close" onclick="closeModal('waitlist')" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div id="waitlist-form">
+      <p style="font-size:.875rem;color:var(--text-muted);margin-bottom:1.25rem;">Be first to access 500+ verified listings in Kigali. We'll notify you the moment we launch in your district.</p>
+      <div class="form-group">
+        <label for="wl-name">Your name</label>
+        <input class="form-input" type="text" id="wl-name" placeholder="Amina Mukandayisenga" />
+      </div>
+      <div class="form-group">
+        <label for="wl-email">Email or phone</label>
+        <input class="form-input" type="text" id="wl-email" placeholder="amina@gmail.com or +250 7XX XXX XXX" />
+      </div>
+      <div class="form-group">
+        <label for="wl-district">Your preferred district</label>
+        <select class="form-input field-select" id="wl-district">
+          <option value="">Any district</option>
+          <option>Gasabo</option><option>Kicukiro</option><option>Nyarugenge</option>
+          <option>Kimihurura</option><option>Remera</option><option>Gisozi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>I am a…</label>
+        <div class="form-radio-group">
+          <label class="form-radio"><input type="radio" name="role" value="tenant" checked /><span>Tenant</span></label>
+          <label class="form-radio"><input type="radio" name="role" value="landlord" /><span>Landlord</span></label>
+        </div>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;padding:.8rem;" onclick="handleWaitlist()">Join Early Access →</button>
+    </div>
+    <div id="waitlist-success" style="display:none;">
+      <div class="form-success">
+        <div class="form-success-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></div>
+        <h3>Welcome to RentEase!</h3>
+        <p>You're on the early access list. We'll reach out as soon as listings go live in your district.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTACT MODAL ══ -->
+<div class="modal-overlay" id="modal-contact" role="dialog" aria-modal="true" aria-labelledby="contact-title" onclick="closeModalOutside(event,'contact')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title" id="contact-title">Contact Us</h2>
+      <button class="modal-close" onclick="closeModal('contact')" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div id="contact-form">
+      <div class="form-group">
+        <label for="c-name">Name</label>
+        <input class="form-input" type="text" id="c-name" placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label for="c-email">Email</label>
+        <input class="form-input" type="email" id="c-email" placeholder="you@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="c-msg">Message</label>
+        <textarea class="form-input" id="c-msg" rows="4" placeholder="How can we help?" style="resize:vertical;"></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;padding:.8rem;" onclick="handleContact()">Send Message →</button>
+      <p style="text-align:center;margin-top:1rem;font-size:.85rem;color:var(--text-muted);">Or email us directly: <a href="mailto:hello@rentease.rw" style="color:var(--green);">hello@rentease.rw</a></p>
+    </div>
+    <div id="contact-success" style="display:none;">
+      <div class="form-success">
+        <div class="form-success-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></div>
+        <h3>Message sent!</h3>
+        <p>We'll get back to you within 24 hours at hello@rentease.rw</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PROPERTY DETAIL MODAL ══ -->
+<div class="modal-overlay" id="modal-property" role="dialog" aria-modal="true" aria-labelledby="property-modal-title" onclick="closeModalOutside(event,'property')">
+  <div class="modal" style="max-width:560px;">
+    <div class="modal-header">
+      <h2 class="modal-title" id="property-modal-title">Property Details</h2>
+      <button class="modal-close" onclick="closeModal('property')" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div id="property-modal-body"></div>
+  </div>
+</div>
+
 <script>
-  // Nav scroll effect
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  });
+/* ══ DATA ══ */
+const properties = [
+  { id:1, type:'apartment', district:'Kimihurura', districtGroup:'Gasabo', price:450000, title:'Modern 2-Bedroom Apartment', emoji:'🏢', badge:'Featured', features:['2 beds','2 baths','Parking','24hr Security'], desc:'A bright, fully-finished 2-bedroom apartment in the heart of Kimihurura. Newly tiled, equipped kitchen, covered parking, and 24-hour security. Perfect for professionals or young families.' },
+  { id:2, type:'apartment', district:'Remera', districtGroup:'Gasabo', price:250000, title:'Furnished 1-Bedroom, City Views', emoji:'🏠', badge:'Verified', features:['1 bed','1 bath','WiFi','Furnished'], desc:'Fully furnished 1-bedroom with stunning views of Kigali from the 5th floor. High-speed WiFi included. Walking distance to UTC, Simba Supermarket, and Remera bus stop.' },
+  { id:3, type:'house', district:'Kiyovu', districtGroup:'Nyarugenge', price:1200000, title:'Executive Villa with Garden', emoji:'🏡', badge:'Featured', features:['4 beds','3 baths','Pool','Garden','2 Parking'], desc:'Stunning executive villa in Kiyovu with a large private garden, swimming pool, and double garage. Ideal for expats, NGOs, or senior executives seeking premium accommodation in central Kigali.' },
+  { id:4, type:'room', district:'Gisozi', districtGroup:'Gasabo', price:85000, title:'Self-Contained Single Room', emoji:'🏗️', badge:'Verified', features:['1 bed','1 bath','24hr Power','Water'], desc:'Affordable self-contained room in Gisozi. Private bathroom, 24-hour electricity, clean water, and a secure compound. Ideal for students and young professionals starting out in Kigali.' },
+  { id:5, type:'commercial', district:'CBD', districtGroup:'Nyarugenge', price:600000, title:'Commercial Office Space', emoji:'🏬', badge:'Featured', features:['80 m²','Parking','Security','Fiber WiFi'], desc:'80sqm open-plan office space in Kigali CBD. High ceilings, fiber internet ready, generator backup, and 24-hour security. Ideal for startups, NGOs, or established businesses.' },
+  { id:6, type:'house', district:'Kanombe', districtGroup:'Kicukiro', price:320000, title:'3-Bedroom Family House', emoji:'🏘️', badge:'Verified', features:['3 beds','2 baths','Garden','Parking'], desc:'Spacious 3-bedroom family home in quiet Kanombe. Large garden, double parking, modern kitchen, and close to schools and Kanombe Market. Great for families relocating to Kigali.' }
+];
 
-  // Mobile menu
-  function toggleMobile() {
-    const m = document.getElementById('mobileMenu');
-    m.classList.toggle('open');
+/* ══ RENDER LISTINGS ══ */
+function renderListings(data) {
+  const grid = document.getElementById('listingsGrid');
+  const none = document.getElementById('noResults');
+  const count = document.getElementById('searchCount');
+  if (!data.length) {
+    grid.innerHTML = '';
+    none.style.display = 'block';
+    count.innerHTML = '<strong>0</strong> properties found';
+    return;
   }
+  none.style.display = 'none';
+  count.innerHTML = `<strong>${data.length}</strong> properties shown · <strong>500+</strong> total listings`;
+  grid.innerHTML = data.map(p => `
+    <article class="property-card" role="listitem" onclick="openProperty(${p.id})" tabindex="0" onkeydown="if(event.key==='Enter')openProperty(${p.id})" aria-label="${p.title} - RWF ${p.price.toLocaleString()} per month">
+      <div class="card-image">
+        <div class="card-image-placeholder" aria-hidden="true">${p.emoji}</div>
+        <div class="${p.badge==='Featured'?'card-badge':'card-verified'}">
+          ${p.badge==='Verified'?'<svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>':''}
+          ${p.badge}
+        </div>
+        <button class="card-wishlist" id="wish-${p.id}" onclick="toggleWish(event,${p.id})" aria-label="Save to wishlist">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-price">RWF ${p.price.toLocaleString()} <span>/ month</span></div>
+        <div class="card-title">${p.title}</div>
+        <div class="card-location">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          ${p.district}, ${p.districtGroup}
+        </div>
+        <div class="card-features">
+          ${p.features.slice(0,3).map(f=>`<span class="card-feature"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>${f}</span>`).join('')}
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
 
-  // Search tabs
-  function setTab(el) {
-    document.querySelectorAll('.s-tab').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-  }
+/* ══ FILTER ══ */
+let activeType = 'all';
+let activeDistrict = '';
+let activeBudget = 0;
 
-  // Filter pills
-  document.querySelectorAll('.filter-pills .pill').forEach(p => {
-    p.addEventListener('click', () => {
-      document.querySelectorAll('.filter-pills .pill').forEach(x => x.classList.remove('active'));
-      p.classList.add('active');
-    });
+function filterListings(type, btn) {
+  activeType = type;
+  document.querySelectorAll('.filter-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  let filtered = properties;
+  if (activeType !== 'all') filtered = filtered.filter(p=>p.type===activeType);
+  if (activeDistrict) filtered = filtered.filter(p=>p.district===activeDistrict||p.districtGroup===activeDistrict);
+  if (activeBudget) filtered = filtered.filter(p=>p.price<=activeBudget);
+  renderListings(filtered);
+}
+
+function runSearch() {
+  activeDistrict = document.getElementById('searchDistrict').value;
+  const budget = document.getElementById('searchBudget').value;
+  activeBudget = budget ? parseInt(budget) : 0;
+  activeType = document.getElementById('searchType').value || 'all';
+  document.querySelectorAll('.filter-tab').forEach((b,i)=>{
+    const types=['all','apartment','house','room','commercial'];
+    b.classList.toggle('active', types[i]===activeType);
   });
+  applyFilters();
+  document.getElementById('listings').scrollIntoView({behavior:'smooth', block:'start'});
+}
 
-  // Search button
-  function searchListings() {
-    const btn = document.querySelector('.btn-search');
-    btn.textContent = 'Searching...';
-    setTimeout(() => {
-      btn.textContent = '🔍   Search Available Properties';
-      document.getElementById('listings').scrollIntoView({ behavior: 'smooth' });
-    }, 800);
+function resetFilters() {
+  activeType='all'; activeDistrict=''; activeBudget=0;
+  document.getElementById('searchDistrict').value='';
+  document.getElementById('searchType').value='';
+  document.getElementById('searchBudget').value='';
+  document.querySelectorAll('.filter-tab').forEach((b,i)=>b.classList.toggle('active',i===0));
+  renderListings(properties);
+}
+
+/* ══ PROPERTY DETAIL ══ */
+function openProperty(id) {
+  const p = properties.find(x=>x.id===id);
+  if (!p) return;
+  document.getElementById('property-modal-title').textContent = p.title;
+  document.getElementById('property-modal-body').innerHTML = `
+    <div class="prop-modal-img" aria-hidden="true">${p.emoji}</div>
+    <div class="prop-modal-price">RWF ${p.price.toLocaleString()} <span style="font-family:var(--font-body);font-size:.85rem;color:var(--text-muted);font-weight:400">/ month</span></div>
+    <div class="prop-modal-title">${p.title}</div>
+    <div class="prop-modal-loc">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      ${p.district}, ${p.districtGroup} District
+    </div>
+    <div class="prop-modal-features">
+      ${p.features.map(f=>`<span class="prop-modal-feat">${f}</span>`).join('')}
+      <span class="prop-modal-feat" style="color:var(--green);border-color:var(--green);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        Titre Foncier Verified
+      </span>
+    </div>
+    <div class="prop-modal-section">
+      <h4>About this property</h4>
+      <p class="prop-modal-desc">${p.desc}</p>
+    </div>
+    <div class="prop-modal-section">
+      <h4>Payments accepted</h4>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+        <span class="prop-modal-feat">MTN MoMo</span>
+        <span class="prop-modal-feat">Airtel Money</span>
+        <span class="prop-modal-feat">Card</span>
+        <span class="prop-modal-feat">Bank Transfer</span>
+      </div>
+    </div>
+    <div class="contact-btn-group">
+      <button class="btn-primary" style="flex:1;justify-content:center;" onclick="closeModal('property');openModal('waitlist');">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Enquire Now
+      </button>
+      <button class="btn-whatsapp" onclick="showToast('Opening WhatsApp...')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.112 1.528 5.835L.057 23.998l6.304-1.654A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.876 9.876 0 01-5.031-1.378l-.361-.214-3.741.981 1-3.641-.235-.374A9.865 9.865 0 012.106 12c0-5.461 4.443-9.894 9.894-9.894 5.452 0 9.894 4.433 9.894 9.894 0 5.462-4.442 9.894-9.894 9.894z"/></svg>
+        WhatsApp
+      </button>
+    </div>
+  `;
+  openModal('property');
+}
+
+/* ══ WISHLIST ══ */
+const wishlist = new Set();
+function toggleWish(e, id) {
+  e.stopPropagation();
+  const btn = document.getElementById('wish-'+id);
+  if (wishlist.has(id)) {
+    wishlist.delete(id);
+    btn.classList.remove('active');
+    showToast('Removed from saved properties');
+  } else {
+    wishlist.add(id);
+    btn.classList.add('active');
+    showToast('Saved to your wishlist!');
   }
+}
 
-  // Listing card favourites
-  document.querySelectorAll('.listing-fav').forEach(f => {
-    f.addEventListener('click', (e) => {
-      e.stopPropagation();
-      f.textContent = f.textContent === '♡' ? '♥' : '♡';
-      f.style.color = f.textContent === '♥' ? '#e07d4a' : '';
-    });
-  });
+/* ══ MODALS ══ */
+function openModal(id) {
+  document.getElementById('modal-'+id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id) {
+  document.getElementById('modal-'+id).classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e,id) {
+  if (e.target===document.getElementById('modal-'+id)) closeModal(id);
+}
+function switchModal(from,to) { closeModal(from); setTimeout(()=>openModal(to),150); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open')); document.body.style.overflow=''; });
 
-  // Scroll reveal
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); revealObs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+/* ══ FORM HANDLERS ══ */
+function handleSignin() {
+  const phone = document.getElementById('signin-phone').value.trim();
+  if (!phone) { showToast('Please enter your phone or email'); return; }
+  showToast('Signing in... (demo mode)');
+  setTimeout(()=>closeModal('signin'), 1200);
+}
+function handleListSubmit() {
+  const name = document.getElementById('list-name').value.trim();
+  const phone = document.getElementById('list-phone').value.trim();
+  if (!name || !phone) { showToast('Please fill in all required fields'); return; }
+  document.getElementById('list-form').style.display='none';
+  document.getElementById('list-success').style.display='block';
+}
+function handleWaitlist() {
+  const name = document.getElementById('wl-name').value.trim();
+  const contact = document.getElementById('wl-email').value.trim();
+  if (!name || !contact) { showToast('Please fill in your name and contact'); return; }
+  document.getElementById('waitlist-form').style.display='none';
+  document.getElementById('waitlist-success').style.display='block';
+}
+function handleContact() {
+  const name = document.getElementById('c-name').value.trim();
+  const email = document.getElementById('c-email').value.trim();
+  const msg = document.getElementById('c-msg').value.trim();
+  if (!name || !email || !msg) { showToast('Please fill in all fields'); return; }
+  document.getElementById('contact-form').style.display='none';
+  document.getElementById('contact-success').style.display='block';
+}
 
-  // Bar width animation
-  const barObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.why-bar-fill').forEach((b, i) => {
-          const w = b.style.width;
-          b.style.width = '0';
-          setTimeout(() => { b.style.transition = 'width 1s cubic-bezier(0.16,1,0.3,1)'; b.style.width = w; }, i * 150 + 200);
-        });
-        barObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  document.querySelectorAll('.why-main-card').forEach(el => barObs.observe(el));
+/* ══ SEARCH TABS ══ */
+function setTab(btn, val) {
+  document.querySelectorAll('.search-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  showToast(`Showing ${val} listings`);
+}
+
+/* ══ LANGUAGE ══ */
+function setLang(btn, lang) {
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const msgs = {en:'English selected',rw:'Kinyarwanda izasohoka vuba!',fr:'Français bientôt disponible!'};
+  showToast(msgs[lang]);
+}
+
+/* ══ MOBILE NAV ══ */
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileNav').classList.contains('open') ? 'hidden' : '';
+}
+
+/* ══ TOAST ══ */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2800);
+}
+
+/* ══ INIT ══ */
+renderListings(properties);
+
+/* ══ SCROLL ANIMATIONS ══ */
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+},{threshold:0.1});
+document.querySelectorAll('.step-card,.property-card,.feature-item,.testimonial-card,.step-v').forEach(el=>{
+  el.style.opacity='0'; el.style.transform='translateY(16px)'; el.style.transition='opacity .45s ease, transform .45s ease';
+  obs.observe(el);
+});
 </script>
+
+<!-- Screen reader only utility -->
+<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
 </body>
 </html>
