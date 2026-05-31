@@ -1,8 +1,8 @@
 ---
-title: Sample House
+title: PLOT
 price: $300/month
-location: Kigali
+location: Kigali, NYAMIRAMBO
 image: /RentEase-Hub/images/uploads/sample.jpg
 ---
 
-Beautiful house in Kigali.
+plot
