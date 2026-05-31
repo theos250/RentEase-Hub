@@ -23,7 +23,7 @@ const LOCATIONS = {
       Nyabihu: ["Bigogwe","Jenda","Jomba","Kabatwa","Karago","Kintobo","Mukamira","Muringa","Rambura","Rugera","Rurembo","Shingiro"],
       Nyamasheke: ["Bushekeri","Bushenge","Cyato","Gihombo","Kagano","Kanjongo","Karambi","Karengera","Kirimbi","Macuba","Mahembe","Nyabitekeri","Rangiro","Ruharambuga","Shangi"],
       Rubavu: ["Bugeshi","Busasamana","Cyanzarwe","Gisenyi","Kanama","Kanzenze","Mudende","Nyamyumba","Nyundo","Rubavu","Rugerero"],
-      "Rusizi / Cyangugu": ["Bugarama","Bweyeye","Gashonga","Giheke","Gihundwe","Gikundamvura","Gitambi","Kamembe","Muganza","Mururu","Nkungu","Nyakabuye","Nyakarenzo","Nzahaha","Rwimbogo"],
+      Rusizi: / Cyangugu": ["Bugarama","Bweyeye","Gashonga","Giheke","Gihundwe","Gikundamvura","Gitambi","Kamembe","Muganza","Mururu","Nkungu","Nyakabuye","Nyakarenzo","Nzahaha","Rwimbogo"],
       Rutsiro: ["Boneza","Gihango","Kigeyo","Kivumu","Manihira","Mukura","Murunda","Musasa","Mushonyi","Mushubati","Nyabirasi","Ruhango","Rusebeya"]
     },
     "Northern Province": {
